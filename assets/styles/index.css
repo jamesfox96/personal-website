@@ -1,0 +1,153 @@
+/* RESET STYLING */
+
+/* makes sizing simpler */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* remove default spacing */
+/* force styling of type through styling, rather than elements */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* dark mode user-agent-styles */
+/* improves punctuation in supported browsers */
+html {
+  color-scheme: dark light;
+  hanging-punctuation: first last;
+}
+
+/* min body height */
+body {
+  min-height: 100svh;
+}
+
+/* responsive images/videos */
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+/* Improved heading in supported browsers */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/* improve readability with max-width on paragraphs and lists */
+/* prevent orphans in supported browsers */
+p,
+li {
+  max-width: var(--p-max-width, 65ch);
+  text-wrap: pretty;
+}
+
+/* END RESET */
+
+:root{
+  /* Colours */
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-text: hsl(0, 0%, 86%);
+    --clr-surface: hsl(206, 72%, 11%);
+
+    --clr-orange-400: hsl(10, 100%, 58%);
+    --clr-orange-300: hsl(10, 100%, 80%);
+    --clr-navy-400: hsl(206, 72%, 11%);
+    --clr-navy-300: hsl(206, 50%, 20%);
+
+    /* Fonts */
+    --fs-base: 16px;
+    --ff-base: "Outfit", sans-serif;
+    --ff-accent: "Young Serif", serif;
+    --fw-regular: 400;
+    --fw-bold: 600;
+    --fw-black: 700;
+    --fw-thin: 200;
+}
+
+html {
+  background: linear-gradient(var(--clr-navy-300), var(--clr-navy-400));
+  font-size: var(--fs-base);
+  font-family: var(--ff-base);
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: var(--fw-black);
+}
+
+h2 {
+  font-size: 1.75rem;
+  font-weight: var(--fw-bold);
+}
+
+
+/* Layouts */
+
+.flex {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  
+}
+
+/* Classes */
+
+.main_content {
+  height: 200vh;
+}
+
+
+/* Temporary */
+
+.palette_container {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+.palette {
+  position: fixed;
+  height: auto;
+  width: inherit;
+  border: 5px solid white;
+}
+
+.palette__box {
+  --_color: var(--color, red);
+  height: 5rem;
+  width: 100%;
+  background: var(--_color);
+}
+
+.p1 {
+  --color: var(--clr-navy-300);
+}
+
+.p2 {
+  --color: var(--clr-navy-400);
+}
+
+.p3 {
+  --color: var(--clr-orange-300)
+}
+
+.p4 {
+  --color: var(--clr-orange-400)
+}
+
+.p5 {
+  --color: var(--clr-text)
+}
