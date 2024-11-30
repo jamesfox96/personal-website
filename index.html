@@ -7,9 +7,9 @@
     <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
     <title>James Fox</title>
     <link rel="stylesheet" href="./assets/styles/index.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="palette_container">
@@ -21,18 +21,21 @@
             <div class="palette__box p5"></div>
         </div>
     </div>
-    <div class="main avoid_palette">
-        <header>
-            <a href="./" class="link_header">James Fox</a>
+    <div class="homepage avoid_palette">
+        <header class="flex">
+            <a href="./" class="link_header">James Fox 🦊</a>
             <nav class="">
                 <ul class="nav_links flex">
-                    <li><a class="link_header" href="">About Me</a></li>
-                    <li><a class="link_header" href="">Projects</a></li>
-                    <li><a class="link_header" href="">Get In Touch</a></li>
+                    <li class="active"><a class="link_header" href=""><span aria-hidden="true" class="nav-number">00</span>Home</a></li>
+                    <li><a class="link_header" href=""><span aria-hidden="true" class="nav-number">01</span>About Me</a></li>
+                    <li><a class="link_header" href=""><span aria-hidden="true" class="nav-number">02</span>Projects</a></li>
+                    <li><a class="link_header" href=""><span aria-hidden="true" class="nav-number">03</span>Get In Touch</a></li>
                 </ul>
             </nav>
         </header>
-        <section class="content-container"></section>
+        <main class="main-container">
+
+        </main>
         <footer></footer>
     </div>
 </body>
