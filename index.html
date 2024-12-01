@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,21 +11,32 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <script src="index.js" defer></script>
 </head>
+
 <body>
-        <header class="flex">
-            <a href="./" class="link_header">James Fox 🦊</a>
-            <nav class="">
-                <ul class="nav_links flex">
-                    <li class="active"><a class="link_header" href=""><span aria-hidden="true" class="nav-number">00</span>Home</a></li>
-                    <li><a class="link_header" href=""><span aria-hidden="true" class="nav-number">01</span>About Me</a></li>
-                    <li><a class="link_header" href=""><span aria-hidden="true" class="nav-number">02</span>Projects</a></li>
-                    <li><a class="link_header" href=""><span aria-hidden="true" class="nav-number">03</span>Get In Touch</a></li>
-                </ul>
-            </nav>
-        </header>
-        <main class="main-container">
-        </main>
-        <footer></footer>
+    <header class="flex">
+        <a href="./" class="link_header">James Fox 🦊</a>
+        <button id="menu-nav-button" onclick="mobileNavClick()" class="mobile-nav-toggle"
+            aria-controls="primary-navigation" aria-label="Menu" aria-expanded="false">
+            <span></span><span></span><span></span></button>
+        <nav class="">
+            <ul id="primary-navigation" class="primary-navigation flex">
+                <li class="active"><a class="link_header" href=""><span aria-hidden="true"
+                            class="nav-number">00</span>Home</a></li>
+                <li><a class="link_header" href=""><span aria-hidden="true" class="nav-number">01</span>About</a></li>
+                <li><a class="link_header" href=""><span aria-hidden="true" class="nav-number">02</span>Projects</a>
+                </li>
+                <li><a class="link_header" href=""><span aria-hidden="true" class="nav-number">03</span>Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main-container">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero officia modi aliquid, ipsam assumenda aperiam
+            illo voluptatum non quis dicta qui voluptatibus inventore ullam provident asperiores voluptates ducimus.
+            Reiciendis, quod.</p>
+    </main>
+    <footer></footer>
 </body>
+
 </html>
