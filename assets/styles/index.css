@@ -85,10 +85,17 @@ html {
 }
 
 body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   font-size: var(--fs-base);
   font-family: var(--ff-base);
   color: var(--clr-text);
-  height: 100%;
+  min-height: 100%;
+
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: linear-gradient(var(--clr-navy-300), var(--clr-navy-400));
 }
 
 h1 {
@@ -110,14 +117,6 @@ h2 {
 }
 
 /* Classes */
-
-.homepage {
-  position: relative;
-  flex-direction: column;
-  min-height: 100%;
-  background: linear-gradient(var(--clr-navy-300), var(--clr-navy-400));
-}
-
 header {
   position: sticky;
   top: 0;
@@ -147,12 +146,12 @@ header {
 
 .nav-number {
   color: var(--clr-orange-400);
+  text-shadow: 0px 0px 6px var(--clr-orange-400);
   font-weight: var(--fw-bolder);
   padding-inline-end: 0.3rem;
 }
 
 main {
-  /* height: 200vh; */
 }
 
 footer {
