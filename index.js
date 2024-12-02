@@ -13,3 +13,13 @@ function mobileNavClick() {
     primaryNav.setAttribute("aria-hidden", "true");
   }
 }
+
+// Stop animations during resize - from: https://css-tricks.com/stop-animations-during-window-resizing/
+let resizeTimer;
+window.addEventListener("resize", () => {
+  document.body.classList.add("resize-animation-stopper");
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    document.body.classList.remove("resize-animation-stopper");
+  }, 400);
+});

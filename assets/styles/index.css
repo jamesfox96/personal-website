@@ -82,6 +82,7 @@ li {
 
 html {
   height: 100%;
+  min-width: 20rem;
 }
 
 body {
@@ -96,6 +97,11 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-image: linear-gradient(var(--clr-navy-300), var(--clr-navy-700));
+}
+
+.resize-animation-stopper * {
+  animation: none !important;
+  transition: none !important;
 }
 
 h1 {
@@ -182,7 +188,7 @@ footer {
   @supports (backdrop-filter: blur(1rem)) {
     .primary-navigation {
       background-color: hsl(0, 0%, 100%, 0.1);
-      backdrop-filter: blur(1rem);
+      backdrop-filter: blur(2rem);
     }
   }
 
