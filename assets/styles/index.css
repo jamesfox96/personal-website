@@ -63,7 +63,8 @@ li {
   --clr-surface: hsl(206, 72%, 11%);
 
   --clr-orange-400: hsl(10, 100%, 58%);
-  --clr-orange-300: hsl(10, 100%, 80%);
+  --clr-orange-300: hsl(10, 100%, 70%);
+  --clr-orange-200: hsl(10, 100%, 80%);
   --clr-navy-700: hsl(206, 85%, 5%);
   --clr-navy-400: hsl(206, 72%, 11%);
   --clr-navy-300: hsl(206, 50%, 20%);
@@ -106,7 +107,7 @@ body {
 
 h1 {
   font-size: 2rem;
-  font-weight: var(--fw-black);
+  font-weight: var(--fw-heavy);
 }
 
 h2 {
@@ -161,6 +162,15 @@ header {
 
 main {
   height: 200vh;
+}
+
+.hero_title {
+  font-size: clamp(3rem, 5vw, 5rem);
+}
+
+.hero_subtitle {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  color: var(--clr-orange-400);
 }
 
 footer {
