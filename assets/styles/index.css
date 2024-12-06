@@ -128,6 +128,7 @@ header {
   padding-block: 1rem;
   padding-inline: clamp(1rem, 5%, 5rem);
   justify-content: space-between;
+  align-items: center;
   background-color: var(--clr-navy-100);
   width: 100%;
 }
