@@ -161,16 +161,17 @@ header {
 }
 
 main {
-  height: 200vh;
+  /* height: 200vh; */
 }
 
 .hero_title {
-  font-size: clamp(3rem, 5vw, 5rem);
+  font-size: clamp(3rem, 6vw, 4rem);
 }
 
 .hero_subtitle {
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-size: clamp(1.5rem, 3vw, 2rem);
   color: var(--clr-orange-400);
+  font-weight: var(--fw-bold);
 }
 
 footer {
@@ -188,8 +189,7 @@ footer {
     z-index: 1000;
     flex-direction: column;
     padding: min(20vh, 4rem) 2rem;
-    background-color: hsl(0, 0%, 0%, 0.6);
-    overflow-y: scroll;
+    background-color: var(--clr-navy-100);
 
     transform: translateX(100%);
     transition: 0.15s ease-in-out;
@@ -197,8 +197,8 @@ footer {
 
   @supports (backdrop-filter: blur(1rem)) {
     .primary-navigation {
-      background-color: hsl(0, 0%, 100%, 0.1);
-      backdrop-filter: blur(2rem);
+      background-color: hsl(206, 30%, 28%, 0.6);
+      backdrop-filter: blur(1rem);
     }
   }
 
