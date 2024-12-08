@@ -198,7 +198,7 @@ footer {
 
   @supports (backdrop-filter: blur(1rem)) {
     .primary-navigation {
-      background-color: hsl(206, 30%, 28%, 0.6);
+      background-color: hsl(206, 30%, 28%, 0.85);
       backdrop-filter: blur(1rem);
     }
   }
