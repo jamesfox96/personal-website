@@ -54,6 +54,12 @@ li {
   text-wrap: pretty;
 }
 
+/* remove anchor tag decoration but keep pointer */
+a {
+  all: unset;
+  cursor: pointer;
+}
+
 /* END RESET */
 
 :root {
@@ -62,6 +68,7 @@ li {
   --clr-text: hsl(0, 0%, 86%);
   --clr-surface: hsl(206, 72%, 11%);
 
+  --clr-orange-500: hsl(10, 100%, 50%);
   --clr-orange-400: hsl(10, 100%, 58%);
   --clr-orange-300: hsl(10, 100%, 70%);
   --clr-orange-200: hsl(10, 100%, 80%);
@@ -121,6 +128,10 @@ h2 {
   flex-direction: row;
 }
 
+.grid {
+  display: grid;
+}
+
 /* Classes */
 header {
   position: sticky;
@@ -162,17 +173,50 @@ header {
 }
 
 main {
-  /* height: 200vh; */
+  height: 100%;
+  margin-bottom: auto;
+}
+
+.hero-container {
+  gap: 2rem;
+  padding: 2rem;
+  justify-items: center;
+  height: 100%;
 }
 
 .hero_title {
   font-size: clamp(3rem, 6vw, 4rem);
+  text-align: center;
 }
 
 .hero_subtitle {
   font-size: clamp(1.5rem, 3vw, 2rem);
   color: var(--clr-orange-400);
   font-weight: var(--fw-bold);
+  padding-top: 2rem;
+  text-align: center;
+}
+
+.hero-img {
+  --radius: 50%;
+  max-width: 75%;
+  border-radius: 50%;
+}
+
+.border {
+  border: 0.125rem solid var(--clr-orange-400);
+}
+
+.cta-button {
+  background-color: var(--clr-orange-400);
+  background-image: linear-gradient(
+    45deg,
+    var(--clr-orange-500),
+    var(--clr-orange-300)
+  );
+  padding-block: 0.5rem;
+  padding-inline: 3rem;
+  border-radius: 0.25rem;
 }
 
 footer {

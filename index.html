@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="My personal website and portfolio.">
+    <meta name="description" content="My personal website.">
     <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
     <title>James Fox</title>
     <link rel="stylesheet" href="./assets/styles/index.css">
@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <script src="index.js" defer></script>
+    <!-- <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script> -->
 </head>
 
 <body>
@@ -33,10 +34,18 @@
         </nav>
     </header>
     <main class="main-container">
-        <h1 class="hero_title">I write code and sometimes it results in something great...</h1>
-        <p class="hero_subtitle">Other times I'm banging my head against a wall for 'unrelated' reasons.</p>
-        <img src="assets/images/portrait_drinking_dinosaur.jpg" alt="a portrait of me.">
-        <a href="mailto:james-fox@mail.com">email me</a>
+        <div class="grid hero-container">
+            <div class="title-container">
+                <h1 class="hero_title">Hi, I'm James. I write code and sometimes it results in something great...</h1>
+                <p class="hero_subtitle">Other times I'm banging my head against a wall for '<span
+                        id="word-change">unrelated</span>' reasons.
+                </p>
+            </div>
+            <img class="hero-img border" src="assets/images/portrait_drinking_dinosaur.jpg" alt="a portrait of me.">
+            <a href="" class="cta-button border">About me</a>
+            <br class="diagonal">
+        </div>
+        <!-- <div class="cf-turnstile" data-sitekey="0x4AAAAAAA1oUxJn9dAxHhHe" data-callback="javascriptCallback"></div> -->
     </main>
     <footer></footer>
 </body>
