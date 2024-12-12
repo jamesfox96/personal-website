@@ -178,8 +178,8 @@ header {
 
 main {
   /* height: 200vh;
-  display: block;
-  overflow-x: hidden; */
+  display: block; */
+  overflow-x: hidden;
 }
 
 .hero-container {
@@ -226,7 +226,6 @@ main {
     linear-gradient(45deg, var(--clr-orange-500), var(--clr-orange-300))
       border-box;
   border: 2px solid transparent;
-  transition: background 1000ms linear;
 }
 
 .diagonal {
