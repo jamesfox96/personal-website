@@ -1,0 +1,21 @@
+.message {
+  padding-top: 30%;
+  margin-inline: auto;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  padding-bottom: 2rem;
+}
+
+p {
+  padding-block: 1rem;
+}
+
+a {
+  text-decoration: underline;
+}
