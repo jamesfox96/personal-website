@@ -1,5 +1,21 @@
+const header = document.querySelector("header");
 const primaryNav = document.querySelector(".primary-navigation");
 const menuNavButton = document.getElementById("menu-nav-button");
+const navigationHeight = document.querySelector("header").offsetHeight;
+
+document.documentElement.style.setProperty(
+  "--scroll-padding",
+  navigationHeight + 1 + "px"
+);
+
+// Hide mobile nav menu when user clicks away from header
+document.addEventListener("click", (e) => {
+  if (menuNavButton.hasAttribute("open")) {
+    if (!header.contains(e.target)) {
+      mobileNavClick();
+    }
+  }
+});
 
 function mobileNavClick() {
   let open = menuNavButton.toggleAttribute("open");
@@ -9,7 +25,7 @@ function mobileNavClick() {
     primaryNav.setAttribute("aria-hidden", "false");
   } else {
     menuNavButton.setAttribute("aria-expanded", "false");
-    primaryNav.removeAttribute("open", "true");
+    primaryNav.removeAttribute("open");
     primaryNav.setAttribute("aria-hidden", "true");
   }
 }
