@@ -17,38 +17,49 @@
 </head>
 
 <body>
-    <header class="flex">
-        <a href="./" class="link_header">James Fox 🦊</a>
-        <button id="menu-nav-button" onclick="mobileNavClick()" class="mobile-nav-toggle"
-            aria-controls="primary-navigation" aria-label="Menu" aria-expanded="false">
-            <span></span><span></span><span></span></button>
-        <nav class="">
-            <ul id="primary-navigation" class="primary-navigation flex">
-                <li class="active"><a class="link_header" href=""><span aria-hidden="true"
-                            class="nav-number">00</span>Home</a></li>
-                <li><a class="link_header" href=""><span aria-hidden="true" class="nav-number">01</span>About</a></li>
-                <li><a class="link_header" href=""><span aria-hidden="true" class="nav-number">02</span>Projects</a>
-                </li>
-                <li><a class="link_header" href=""><span aria-hidden="true" class="nav-number">03</span>Contact</a></li>
-            </ul>
-        </nav>
+    <header>
+        <div class="flex header-wrapper">
+            <a href="./" class="header-link">James Fox 🦊</a>
+            <button id="menu-nav-button" onclick="mobileNavClick()" class="mobile-nav-toggle"
+                aria-controls="primary-navigation" aria-label="Menu" aria-expanded="false">
+                <span></span><span></span><span></span></button>
+            <nav>
+                <ul id="primary-navigation" class="primary-navigation flex">
+                    <li class="active"><a class="link_header" href=""><span aria-hidden="true"
+                                class="nav-number">00</span>Home</a></li>
+                    <li><a class="link_header" href=""><span aria-hidden="true" class="nav-number">01</span>About</a>
+                    </li>
+                    <li><a class="link_header" href=""><span aria-hidden="true" class="nav-number">02</span>Projects</a>
+                    </li>
+                    <li><a class="link_header" href=""><span aria-hidden="true" class="nav-number">03</span>Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <main class="main-container">
-        <div class="grid hero-container">
-            <div class="title-container">
-                <h1 class="hero_title">Hi, I'm James. I write code and sometimes it results in something great...</h1>
-                <p class="hero_subtitle">Other times I'm banging my head against a wall for '<span
+    <main>
+        <div class="grid hero">
+            <div class="hero__text">
+                <h1 class="hero__title">Hi, I'm James. I write code and sometimes it results in something great...</h1>
+                <p class="hero__subtitle">Other times I'm banging my head against a wall for '<span
                         id="word-change">unrelated</span>' reasons.
                 </p>
             </div>
-            <img class="hero-img gradient-border" src="assets/images/portrait_drinking_dinosaur.jpg"
+            <img class="hero__img gradient-border" src="assets/images/portrait_drinking_dinosaur.jpg"
                 alt="a portrait of me.">
-            <a href="" class="cta-button gradient-border">About me</a>
-
         </div>
+        <a href="" class="hero__cta cta-button gradient-border">About me</a>
         <svg xmlns="http://www.w3.org/2000/svg" class="diagonal">
             <line x1="0" y1="100%" x2="100%" y2="0" />
         </svg>
+        <section>
+            <h2>
+                whoami
+            </h2>
+            <p>
+                tldr: I'm a 'data scientist' from Cambridge, the original one, not somewhere in the US.
+            </p>
+        </section>
         <!-- <div class="cf-turnstile" data-sitekey="0x4AAAAAAA1oUxJn9dAxHhHe" data-callback="javascriptCallback"></div> -->
     </main>
     <footer></footer>
