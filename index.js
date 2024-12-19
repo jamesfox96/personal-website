@@ -33,6 +33,10 @@ function mobileNavClick() {
 // Stop animations during resize - from: https://css-tricks.com/stop-animations-during-window-resizing/
 let resizeTimer;
 window.addEventListener("resize", () => {
+  // Remove aria-hidden when nav bar switches from mobile view
+  if (!menuNavButton.checkVisibility()) {
+    primaryNav.removeAttribute("aria-hidden");
+  }
   document.body.classList.add("resize-animation-stopper");
   clearTimeout(resizeTimer);
   resizeTimer = setTimeout(() => {
