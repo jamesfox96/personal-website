@@ -1,11 +1,12 @@
 .message {
-  padding-top: 30%;
+  padding-top: 20vh;
   margin-inline: auto;
   text-align: center;
 }
 
 h1 {
   font-size: 3rem;
+  color: var(--clr-orange-500, orange);
 }
 
 h2 {
