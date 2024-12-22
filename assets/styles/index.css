@@ -67,7 +67,7 @@ a {
 /* END RESET */
 
 :root {
-  --max-width: 1600px;
+  --max-width: 1440px;
 
   /* Colours */
   --clr-white: hsl(0, 0%, 100%);
@@ -86,7 +86,7 @@ a {
   /* Fonts */
   --fs-base: 16px;
   --ff-base: "Outfit", sans-serif;
-  --ff-accent: "Young Serif", serif;
+  --ff-accent: helvetica, serif;
   --fw-regular: 400;
   --fw-bold: 600;
   --fw-bolder: 700;
@@ -128,6 +128,12 @@ h1 {
 h2 {
   font-size: 1.75rem;
   font-weight: var(--fw-bold);
+}
+
+.accent {
+  font-family: var(--ff-accent);
+  font-style: italic;
+  color: var(--clr-orange-300);
 }
 
 /* Layouts */
@@ -180,14 +186,14 @@ header {
 
 .nav-number {
   color: var(--clr-orange-400);
-  text-shadow: 0px 0px 6px var(--clr-orange-400);
+  text-shadow: 0px 0px 6px var(--clr-orange-500);
   font-weight: var(--fw-bolder);
   margin-inline-end: 0.5rem;
 }
 
 main {
-  height: 200vh;
-  overflow-x: hidden;
+  /* height: 200vh; */
+  /* overflow-x: hidden; */
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 1rem;
@@ -257,6 +263,10 @@ main {
   width: 100%;
   margin: 3rem auto;
   overflow: visible;
+}
+
+.highlight {
+  color: var(--clr-orange-300);
 }
 
 footer {
@@ -349,13 +359,18 @@ footer {
 
 /* Larger Screens */
 @media (min-width: 1000px) {
+  .header-wrapper {
+    padding-inline: 2rem;
+  }
+
   main {
     margin-top: 3rem;
     padding-inline: 2rem;
   }
 
   .hero {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 1rem;
   }
 
   .hero__title {
@@ -366,6 +381,11 @@ footer {
   .hero__subtitle {
     font-size: clamp(1.25rem, 4cqw, 2rem);
     text-align: left;
+  }
+
+  .hero__img {
+    max-width: min(100%, 30rem);
+    justify-self: end;
   }
 
   .hero__cta {
