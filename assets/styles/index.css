@@ -121,19 +121,21 @@ body {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: var(--fw-heavy);
 }
 
 h2 {
-  font-size: 1.75rem;
+  font-size: 2.25rem;
   font-weight: var(--fw-bold);
+  text-align: center;
 }
 
 .accent {
   font-family: var(--ff-accent);
   font-style: italic;
   color: var(--clr-orange-300);
+  font-size: 0.875rem;
 }
 
 /* Layouts */
@@ -144,6 +146,10 @@ h2 {
 
 .grid {
   display: grid;
+}
+
+.highlight {
+  color: var(--clr-orange-300);
 }
 
 /* Classes */
@@ -166,6 +172,10 @@ header {
 .header-link {
   text-decoration: none;
   color: var(--clr-text);
+}
+
+.header__logo {
+  height: 2rem;
 }
 
 .primary-navigation {
@@ -234,7 +244,7 @@ main {
 
 .cta-button {
   display: block;
-  max-width: 5rem;
+  width: fit-content;
   padding-block: 0.5rem;
   padding-inline: 3rem;
   border-radius: 0.25rem;
@@ -265,8 +275,22 @@ main {
   overflow: visible;
 }
 
-.highlight {
-  color: var(--clr-orange-300);
+.about-wrapper {
+  text-align: center;
+  justify-items: center;
+}
+
+.about-wrapper p {
+  margin-block: 1rem;
+}
+
+.image-wrapper {
+  justify-items: center;
+  /* padding-block: 2rem 1rem; */
+}
+
+img.graphic {
+  max-width: clamp(15rem, 75%, 20rem);
 }
 
 footer {
@@ -390,5 +414,22 @@ footer {
 
   .hero__cta {
     margin: 4rem 0 0;
+  }
+
+  h2#whoami {
+    text-align: center;
+    width: 50%;
+    justify-self: end;
+  }
+
+  .about-wrapper {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+    text-align: start;
+  }
+
+  .about-wrapper > .image-wrapper {
+    order: -1;
   }
 }
