@@ -1,41 +1,40 @@
-# MyWebsite
-Repo for my personal website
+# James Fox — Personal Website
 
-## Editing shared components
+My personal website at [james-fox.com](https://james-fox.com), covering my projects,
+career and interests in software development, bioinformatics and applied AI.
 
-The header and footer are defined in `scripts/site-components.mjs`. After editing
-them, run:
+Built with HTML, CSS and vanilla JavaScript, and hosted on Cloudflare Pages.
+
+## Local development
+
+Open the repository in VS Code and use **Live Server** to preview the site.
+The static pages have no runtime dependencies.
+
+The shared header and footer are maintained in `scripts/site-components.mjs`.
+After changing these templates, regenerate the HTML with Node.js:
 
 ```sh
 node scripts/build-site.mjs
 ```
 
-Commit the updated HTML along with the component changes. The pages can be served
-directly with VS Code Live Server or static hosting; no build is needed to view
-them. To check that generated components are current:
+The generated HTML is committed alongside the templates. Check that it is up to
+date with:
 
 ```sh
 node scripts/build-site.mjs --check
 ```
 
-## Search and sharing
+## Structure
 
-- `sitemap.xml` lists published canonical pages. Add new pages when they go live;
-  don't include the 404 page, unfinished routes or fragment URLs.
-- `robots.txt` permits public crawling and advertises the sitemap.
-- Each published page has its own title, description, canonical URL, Open Graph /
-  Twitter metadata and JSON-LD. Keep structured data consistent with visible text.
-- `llms.txt` provides a concise guide to public content. Update it when the
-  biography or available pages change.
-- `assets/images/social-preview.jpg` is the 1200 × 630 sharing image.
-- `assets/documents/james-fox-cv.pdf` is the public CV download. Replace it with
-  the latest contact-stripped PDF when updating the CV; the download link stays
-  the same.
+- `index.html` — homepage
+- `projects/` — project write-ups
+- `experience/` — career history, education and CV download
+- `assets/` — stylesheets, images and documents
+- `scripts/` — shared templates and HTML generation
+- `404.html` — custom error page
+- `sitemap.xml`, `robots.txt` and `llms.txt` — search discovery and content index
 
-After deployment, verify `https://james-fox.com/` in Google Search Console and Bing
-Webmaster Tools, then submit `https://james-fox.com/sitemap.xml`. Confirm that the
-host serves missing routes with HTTP 404 and allows search crawlers to access
-public pages through any Cloudflare settings.
+## Deployment
 
-The email address must stay out of public HTML, metadata and `llms.txt`. The future
-contact endpoint should return it only after server-side Turnstile verification.
+Cloudflare Pages serves the repository root as a static site. No framework or
+deployment build command is required.
