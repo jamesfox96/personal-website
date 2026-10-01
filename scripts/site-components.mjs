@@ -6,7 +6,7 @@ export function renderHeader(pagePath) {
     { label: "Home", href: "/", current: pagePath === "/" },
     { label: "Experience", href: "/experience/", current: pagePath === "/experience" || pagePath.startsWith("/experience/") },
     { label: "Projects", href: "/projects/", current: pagePath.startsWith("/projects") },
-    { label: "Contact", href: "/contact", current: pagePath === "/contact" || pagePath.startsWith("/contact/") },
+    { label: "Contact", href: "/contact/", current: pagePath === "/contact" || pagePath.startsWith("/contact/") },
   ];
 
   return `
@@ -43,7 +43,7 @@ export function renderFooter() {
         <nav aria-label="Contact and social links">
           <ul class="footer-links">
             <li>
-              <a href="/contact">
+              <a href="/contact/">
                 <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor"
                   stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
                   <rect x="3" y="5" width="18" height="14" rx="2" />

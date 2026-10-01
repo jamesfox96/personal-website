@@ -157,7 +157,11 @@ h2 {
   height: 2px;
   margin: 1rem auto 0;
   border-radius: 1rem;
-  background: linear-gradient(90deg, var(--clr-orange-400), var(--clr-orange-200));
+  background: linear-gradient(
+    90deg,
+    var(--clr-orange-400),
+    var(--clr-orange-200)
+  );
 }
 
 .section-title--left {
@@ -318,8 +322,17 @@ main {
   align-self: center;
 }
 
-.hero__cta {
+.hero__contact {
   margin-top: 4rem;
+  text-align: center;
+}
+
+.hero__contact-text {
+  font-style: italic;
+}
+
+.hero__cta {
+  margin-top: 1rem;
   margin-inline: auto;
 }
 
@@ -579,7 +592,9 @@ footer {
 
     transform: translateX(100%);
     visibility: hidden;
-    transition: transform 150ms ease-in-out, visibility 150ms;
+    transition:
+      transform 150ms ease-in-out,
+      visibility 150ms;
   }
 
   @supports (backdrop-filter: blur(1rem)) {
@@ -722,8 +737,12 @@ footer {
     justify-self: end;
   }
 
+  .hero__contact {
+    text-align: left;
+  }
+
   .hero__cta {
-    margin: 4rem 0 0;
+    margin-inline: 0;
   }
 
   .about-wrapper {

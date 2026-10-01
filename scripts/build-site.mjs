@@ -6,6 +6,7 @@ const pages = [
   { file: "index.html", path: "/" },
   { file: "projects/index.html", path: "/projects/" },
   { file: "experience/index.html", path: "/experience/" },
+  { file: "contact/index.html", path: "/contact/" },
   { file: "404.html", path: "/404.html" },
 ];
 const check = process.argv.includes("--check");

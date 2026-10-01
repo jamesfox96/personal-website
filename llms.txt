@@ -16,6 +16,7 @@ The linked pages contain James's own descriptions of his work and interests. Thi
 
 ## Public profiles
 
+- [Contact](https://james-fox.com/contact/): Public profile links and a Cloudflare-verified reveal for direct contact details.
 - [GitHub](https://github.com/jamesfox96): James's public repositories.
 - [LinkedIn](https://www.linkedin.com/in/jamesfox96/): Professional profile.
 - [Home lab repository](https://github.com/jamesfox96/homelab): Public configuration and scripts for the home lab.

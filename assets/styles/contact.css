@@ -1,0 +1,131 @@
+.contact-content {
+  width: 100%;
+  max-width: 65rem;
+  margin-inline: auto;
+  display: grid;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.contact-panel {
+  max-width: none;
+  min-width: 0;
+  min-height: 30rem;
+}
+
+.contact-panel h2 {
+  font-size: clamp(1.4rem, 3vw, 1.75rem);
+  text-align: start;
+  margin-bottom: 1rem;
+}
+
+.contact-panel p {
+  line-height: 1.7;
+}
+
+.contact-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--clr-orange-300);
+  margin-bottom: 1.5rem;
+}
+
+.contact-panel .contact-status {
+  color: hsl(206, 20%, 76%);
+  font-size: 0.9375rem;
+  margin-top: 1.5rem;
+}
+
+.contact-challenge {
+  margin-top: 1rem;
+  min-height: 65px;
+}
+
+.contact-retry {
+  color: var(--clr-text);
+  margin-top: 1rem;
+  padding-inline: 1.5rem;
+}
+
+.contact-details {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--clr-navy-100);
+  overflow-wrap: anywhere;
+}
+
+.contact-details h3 {
+  font-size: 1.125rem;
+  font-weight: var(--fw-bold);
+  margin-bottom: 1rem;
+}
+
+.contact-details dt {
+  margin-top: 1rem;
+  color: hsl(206, 20%, 76%);
+  font-size: 0.875rem;
+}
+
+.contact-details dd a {
+  display: inline-block;
+  padding-block: 0.4rem;
+}
+
+.contact-socials {
+  display: grid;
+  grid-auto-rows: 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  list-style: none;
+}
+
+.contact-socials a {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  height: 100%;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--clr-navy-100);
+  border-radius: 0.65rem;
+}
+
+.contact-socials a:hover {
+  color: var(--clr-orange-300);
+  border-color: var(--clr-orange-300);
+}
+
+.contact-social-icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  color: var(--clr-orange-300);
+}
+
+.contact-socials strong {
+  display: block;
+  font-weight: var(--fw-bold);
+}
+
+.contact-socials small {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: hsl(206, 20%, 76%);
+}
+
+.contact-content [hidden] {
+  display: none;
+}
+
+@media (min-width: 56em) {
+  .contact-content {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 24em) {
+  .contact-panel {
+    min-height: 36rem;
+    padding: 1rem;
+  }
+}
