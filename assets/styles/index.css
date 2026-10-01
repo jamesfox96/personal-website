@@ -156,6 +156,7 @@ h2 {
 header {
   position: sticky;
   top: 0;
+  z-index: 100;
   background-color: var(--clr-navy-100);
   width: 100%;
 }
@@ -243,20 +244,60 @@ main {
 }
 
 .cta-button {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   display: block;
   width: fit-content;
   padding-block: 0.5rem;
   padding-inline: 3rem;
   border-radius: 0.25rem;
+  cursor: pointer;
+  transition: color 250ms ease;
   --button-bg: var(--clr-navy-400);
 }
 
-.cta-button:hover {
-  --button-bg: transparent;
+/* Drop from above with the left edge reaching the bottom before the right. */
+.cta-button::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: calc(100% + 1rem);
+  z-index: -1;
+  background: linear-gradient(
+    90deg,
+    var(--clr-orange-400),
+    var(--clr-orange-300)
+  );
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 1rem), 0 100%);
+  transform: translateY(-100%);
+  transition: transform 200ms ease-in-out;
+  pointer-events: none;
+}
+
+.cta-button:is(:hover, :focus-visible) {
+  color: var(--clr-navy-700);
+}
+
+.cta-button:is(:hover, :focus-visible)::before {
+  transform: translateY(0);
+}
+
+.cta-button:focus-visible {
+  outline: 2px solid var(--clr-orange-300);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-button,
+  .cta-button::before {
+    transition: none;
+  }
 }
 
 .gradient-border {
-  background: linear-gradient(
+  background:
+    linear-gradient(
         var(--button-bg, transparent),
         var(--button-bg, transparent)
       )
@@ -278,10 +319,43 @@ main {
 .about-wrapper {
   text-align: center;
   justify-items: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .about-wrapper p {
   margin-block: 1rem;
+}
+
+/* Reusable text panel */
+.text-panel {
+  width: 100%;
+  max-width: 65ch;
+  min-width: 0;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid transparent;
+  border-radius: 1rem;
+  background:
+    linear-gradient(145deg, var(--clr-navy-400), var(--clr-navy-700))
+      padding-box,
+    linear-gradient(
+        125deg,
+        hsl(10, 100%, 70%, 0.5),
+        var(--clr-navy-100) 30%,
+        hsl(206, 30%, 28%, 0.4)
+      )
+      border-box;
+  box-shadow: 0 12px 32px hsl(206, 85%, 5%, 0.15);
+  text-align: start;
+  line-height: 1.7;
+}
+
+.text-panel p {
+  margin-block: 0;
+}
+
+.text-panel p + p {
+  margin-top: 1rem;
 }
 
 .image-wrapper {
@@ -291,6 +365,53 @@ main {
 
 img.graphic {
   max-width: clamp(15rem, 75%, 20rem);
+}
+
+/* Simple photo gallery: one wide photo above two smaller photos. */
+.photo-gallery {
+  width: 100%;
+  max-width: 65ch;
+  min-width: 0;
+}
+
+.photo-gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(0.5rem, 1.5vw, 1rem);
+}
+
+.photo-gallery__item {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 1px solid var(--clr-navy-100);
+  border-radius: 1rem;
+}
+
+.photo-gallery__item:first-child {
+  grid-column: 1 / -1;
+  aspect-ratio: 16 / 9;
+}
+
+.photo-gallery__item--lake {
+  object-position: center bottom;
+}
+
+.photo-gallery__item--race {
+  object-position: center 38%;
+}
+
+.photo-gallery__item--hike {
+  object-position: center 70%;
+}
+
+.photo-gallery figcaption {
+  margin-top: 1rem;
+  text-align: center;
+  line-height: 1.5;
 }
 
 footer {
@@ -431,5 +552,34 @@ footer {
 
   .about-wrapper > .image-wrapper {
     order: -1;
+  }
+
+  .about-wrapper > .photo-gallery {
+    /* Let the adjacent text set the row height, including space for the caption. */
+    contain: size;
+    align-self: stretch;
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto;
+    min-height: 0;
+  }
+
+  .photo-gallery__grid {
+    min-height: 0;
+    grid-template-rows: minmax(0, 3fr) minmax(0, 2fr);
+  }
+
+  .photo-gallery__item {
+    height: 100%;
+    min-height: 0;
+    aspect-ratio: auto;
+  }
+
+  .photo-gallery__item:first-child {
+    aspect-ratio: auto;
+  }
+
+  .photo-gallery__item--lake {
+    /* Prioritise the scenery when the desktop frame becomes wide and shallow. */
+    object-position: center 65%;
   }
 }

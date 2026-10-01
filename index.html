@@ -1,112 +1,226 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="My personal website.">
-    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="James Fox — full-stack software developer and Senior AI Applied Innovation Specialist in Cambridge, UK. Seven years building tools for pharmaceutical R&amp;D."
+    />
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
     <title>James Fox</title>
-    <link rel="stylesheet" href="./assets/styles/index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/styles/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
     <!-- <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script> -->
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <div class="flex header-wrapper">
-            <a href="./" class="header-link"><img class="header__logo" src="./assets/images/logo_full_s.png"
-                    alt="logo"></a>
-            <button id="menu-nav-button" onclick="mobileNavClick()" class="mobile-nav-toggle"
-                aria-controls="primary-navigation" aria-label="Menu" aria-expanded="false">
-                <span></span><span></span><span></span></button>
-            <nav>
-                <ul id="primary-navigation" class="primary-navigation flex">
-                    <li class="active"><a class="link_header" href=""><span aria-hidden="true"
-                                class="nav-number">00</span>Home</a></li>
-                    <li><a class="link_header" href=""><span aria-hidden="true"
-                                class="nav-number">01</span>Experience</a>
-                    </li>
-                    <li><a class="link_header" href=""><span aria-hidden="true" class="nav-number">02</span>Projects</a>
-                    </li>
-                    <li><a class="link_header" href=""><span aria-hidden="true" class="nav-number">03</span>Contact</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+      <div class="flex header-wrapper">
+        <a href="./" class="header-link"
+          ><img
+            class="header__logo"
+            src="./assets/images/logo_full_s.png"
+            alt="logo"
+        /></a>
+        <button
+          id="menu-nav-button"
+          onclick="mobileNavClick()"
+          class="mobile-nav-toggle"
+          aria-controls="primary-navigation"
+          aria-label="Menu"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+        <nav>
+          <ul id="primary-navigation" class="primary-navigation flex">
+            <li class="active">
+              <a class="link_header" href=""
+                ><span aria-hidden="true" class="nav-number">00</span>Home</a
+              >
+            </li>
+            <li>
+              <a class="link_header" href=""
+                ><span aria-hidden="true" class="nav-number">01</span
+                >Experience</a
+              >
+            </li>
+            <li>
+              <a class="link_header" href=""
+                ><span aria-hidden="true" class="nav-number">02</span
+                >Projects</a
+              >
+            </li>
+            <li>
+              <a class="link_header" href=""
+                ><span aria-hidden="true" class="nav-number">03</span>Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
     <main>
-        <div class="grid hero">
-            <div class="hero__text">
-                <h1 class="hero__title">Hi, I'm James. I write code and sometimes it results in something great...</h1>
-                <p class="hero__subtitle">Other times I'm banging my head against a wall for '<span
-                        id="word-change">unrelated</span>' reasons.
-                </p>
-            </div>
-            <img class="hero__img gradient-border" src="assets/images/portrait_drinking_dinosaur.jpg"
-                alt="a portrait of me.">
+      <div class="grid hero">
+        <div class="hero__text">
+          <h1 class="hero__title">
+            Hi, I'm James. I build things sometimes it results in something
+            great...
+          </h1>
+          <p class="hero__subtitle">
+            Other times I'm banging my head against a wall for '<span
+              id="word-change"
+              >unrelated</span
+            >' reasons.
+          </p>
         </div>
-        <a href="/#whoami" class="hero__cta cta-button gradient-border">About Me</a>
-        <svg xmlns="http://www.w3.org/2000/svg" class="diagonal">
-            <line x1="0" y1="100%" x2="100%" y2="0" />
-        </svg>
-        <section>
-            <h2 id="whoami">
-                whoami
-            </h2>
-            <div class="grid about-wrapper">
-                <div>
-                    <p>
-                        tldr: I'm a <span class="highlight">data scientist</span> / <span class="highlight">software
-                            developer</span> / <span class="highlight">average runner</span> /
-                        <span class="highlight">fair-weather cyclist</span>
-                        from Cambridge, UK. You know, the one with the fancy university that I didn't get in to.
-                    </p>
-                    <p>I'm a "Senior Data Scientist" at AstraZeneca where I spend most of my time doing
-                        full-stack software development. My team supports web lab scientists by creating
-                        tools that help them automate, capture and visualise their data.
-                    </p>
-                    <p>I've been working at AZ in Cambridge since 2019 where I started as an apprentice whilst
-                        completing
-                        an MSc in Bioinformatics. Since then, I've had the privelege of working on some really cool
-                        projects that have provided learning opportunities at every step! My biggest passion is in
-                        creating bespoke solutions to simplify the way people do things - making it easier to get new
-                        medicines to patients.
-                    </p>
-                </div>
-                <div class="grid image-wrapper">
-                    <img class="graphic" src="assets/images/programming.png" alt="">
-                    <p class="accent">Surprisingly, there isn't an action shot of me doing any programming, so you'll
-                        have
-                        to imagine this is me.</p>
-                </div>
-                <div>
-                    <p>My experience working in a small team has exposed me to many different technologies in the
-                        full-stack world. I'm most comfortable speaking in Java (it was my first love) but I enjoy
-                        having a go at anything.</p>
-                    <p>When I'm not working, you can often find me plodding around the local countryside trying to beat
-                        a Strava segment PB.</p>
-                    <p>If the weather is nice I might even drag the bike out, who knows. If all else fails and there's
-                        no football on I'll be
-                        programming, reading or reading about programming. I'm a simple man.</p>
-                    <p>
-                        If any of this rambling has whet your appetite, get you can always read my CV...
-                    </p>
-
-                </div>
-                <a href="" class="cta-button gradient-border">My Experience</a>
+        <img
+          class="hero__img gradient-border"
+          src="assets/images/portrait_drinking_dinosaur.jpg"
+          alt="a portrait of me."
+        />
+      </div>
+      <a href="/#whoami" class="hero__cta cta-button gradient-border"
+        >About Me</a
+      >
+      <svg xmlns="http://www.w3.org/2000/svg" class="diagonal">
+        <line x1="0" y1="100%" x2="100%" y2="0" />
+      </svg>
+      <section>
+        <h2 id="whoami">whoami</h2>
+        <div class="grid about-wrapper">
+          <div class="text-panel">
+            <p>
+              tldr: I'm a <span class="highlight">software developer</span> /
+              <span class="highlight">AI tinkerer</span> /
+              <span class="highlight">average runner</span> /
+              <span class="highlight">fair-weather cyclist</span>
+              from Cambridge, UK. You know, the one with the fancy university
+              that I didn't get in to.
+            </p>
+            <p>
+              I'm a Senior AI Applied Innovation Specialist in AstraZeneca's
+              Enterprise AI team. That's the job title; the bit I enjoy is
+              <span class="highlight">building useful software</span> with the
+              people who need it. These days that means tools powered by large
+              language models, helping colleagues find expertise, connect
+              projects and make better-informed decisions.
+            </p>
+            <p>
+              I joined AZ in Cambridge in 2019 as a bioinformatics apprentice,
+              completing an MSc in Applied Bioinformatics at Cranfield along the
+              way.
+              <span class="highlight"
+                >Seven years of full-stack development</span
+              >
+              later, I've worked on everything from visualising therapeutic
+              lineage to optimising mRNA sequences. The common thread is making
+              complicated work a little simpler, so scientists can spend more
+              time on the science.
+            </p>
+          </div>
+          <div class="grid image-wrapper">
+            <img class="graphic" src="assets/images/programming.png" alt="" />
+            <p class="accent">
+              Surprisingly, there isn't an action shot of me doing any
+              programming, so you'll have to imagine this is me.
+            </p>
+          </div>
+          <div class="text-panel">
+            <p>
+              Java was my first love, but these days I also work with a whole
+              stack of things. I've spent a lot of time doing full-stack
+              development. I enjoy the whole journey: talking through a problem,
+              building the application and keeping it running. Along the way,
+              I've
+              <span class="highlight">mentored early-career developers</span>,
+              led recruitment and looked after the servers behind our tools.
+            </p>
+            <p>
+              The tinkering carries on at home, where an
+              <span class="highlight">Ubuntu server</span> and a stack of Docker
+              containers give me plenty of excuses to learn something new. I'm
+              also teaching myself Neo4j and keeping an eye on what's happening
+              in AI and machine learning.
+            </p>
+            <p>
+              Away from a keyboard, you'll find me running, cycling or on a
+              squash court. I also like swapping Cambridge's famously flat
+              terrain for
+              <span class="highlight">a hike in the mountains</span>; most
+              recently on a section of the Alta Via 1 in the Dolomites.
+              Otherwise, there's a pile of fantasy novels and non-fiction
+              competing for my attention (the stack's push rate is greater than
+              the pop rate...).
+            </p>
+          </div>
+          <figure class="photo-gallery" aria-label="Life outside work">
+            <div class="photo-gallery__grid">
+              <img
+                class="photo-gallery__item photo-gallery__item--lake"
+                src="assets/images/gallery/lake-view-1280.webp"
+                srcset="
+                  assets/images/gallery/lake-view-640.webp   640w,
+                  assets/images/gallery/lake-view-1280.webp 1280w
+                "
+                sizes="(min-width: 1000px) min(65ch, calc((100vw - 6rem) / 2)),
+                       min(65ch, calc(100vw - 2rem))"
+                width="1280"
+                height="960"
+                alt="Taking in the view of a mountain-lined lake from a rocky lookout."
+                loading="lazy"
+                decoding="async"
+              />
+              <img
+                class="photo-gallery__item photo-gallery__item--race"
+                src="assets/images/gallery/post-race-720.webp"
+                srcset="
+                  assets/images/gallery/post-race-360.webp 360w,
+                  assets/images/gallery/post-race-720.webp 720w
+                "
+                sizes="(min-width: 1000px) min(32.5ch, calc((100vw - 8rem) / 4)),
+                       min(32.5ch, calc((100vw - 3rem) / 2))"
+                width="720"
+                height="960"
+                alt="Three runners relaxing with drinks and finisher medals after a race."
+                loading="lazy"
+                decoding="async"
+              />
+              <img
+                class="photo-gallery__item photo-gallery__item--hike"
+                src="assets/images/gallery/mountain-hike-627.webp"
+                srcset="
+                  assets/images/gallery/mountain-hike-320.webp 320w,
+                  assets/images/gallery/mountain-hike-627.webp 627w
+                "
+                sizes="(min-width: 1000px) min(32.5ch, calc((100vw - 8rem) / 4)),
+                       min(32.5ch, calc((100vw - 3rem) / 2))"
+                width="627"
+                height="836"
+                alt="Hiking with a backpack and trekking poles on a rocky ridge beneath jagged peaks."
+                loading="lazy"
+                decoding="async"
+              />
             </div>
-        </section>
-        <svg xmlns="http://www.w3.org/2000/svg" class="diagonal">
-            <line x1="100%" y1="100%" x2="0" y2="0" />
-        </svg>
-        <!-- <div class="cf-turnstile" data-sitekey="0x4AAAAAAA1oUxJn9dAxHhHe" data-callback="javascriptCallback"></div> -->
+            <figcaption class="accent">
+              A few snapshots from outside work.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+      <svg xmlns="http://www.w3.org/2000/svg" class="diagonal">
+        <line x1="100%" y1="100%" x2="0" y2="0" />
+      </svg>
+      <!-- <div class="cf-turnstile" data-sitekey="0x4AAAAAAA1oUxJn9dAxHhHe" data-callback="javascriptCallback"></div> -->
     </main>
     <footer></footer>
-</body>
-<script src="index.js" defer></script>
-
+  </body>
+  <script src="index.js" defer></script>
 </html>
