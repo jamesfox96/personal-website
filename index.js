@@ -53,6 +53,66 @@ if (header && primaryNav && menuNavButton) {
 
 }
 
+const rotatingWords = document.querySelectorAll(".hero__words > span");
+
+if (rotatingWords.length > 1) {
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const words = Array.from(rotatingWords, (word) => Array.from(word.textContent));
+  const typedWord = document.createElement("span");
+  typedWord.className = "hero__typed is-current";
+  rotatingWords.forEach((word) => word.classList.remove("is-current"));
+  rotatingWords[0].parentElement.append(typedWord);
+  let wordIndex = 0;
+  let characterCount = words[0].length;
+  let deleting = true;
+  let wordTimer;
+
+  function renderWord() {
+    typedWord.textContent = words[wordIndex].slice(0, characterCount).join("");
+  }
+
+  function typeNextCharacter() {
+    let delay;
+    if (deleting) {
+      characterCount--;
+      delay = 65;
+      if (characterCount === 0) {
+        wordIndex = (wordIndex + 1) % words.length;
+        deleting = false;
+        delay = 300;
+      }
+    } else {
+      characterCount++;
+      delay = 110;
+      if (characterCount === words[wordIndex].length) {
+        deleting = true;
+        delay = 2200;
+      }
+    }
+    renderWord();
+    wordTimer = setTimeout(typeNextCharacter, delay);
+  }
+
+  function updateWordRotation() {
+    clearTimeout(wordTimer);
+    if (reducedMotion.matches) {
+      wordIndex = 0;
+      characterCount = words[0].length;
+      deleting = true;
+      renderWord();
+      return;
+    }
+    if (!document.hidden) {
+      wordTimer = setTimeout(typeNextCharacter, 2200);
+    }
+  }
+
+  reducedMotion.addEventListener("change", updateWordRotation);
+  document.addEventListener("visibilitychange", updateWordRotation);
+  renderWord();
+  updateWordRotation();
+}
+
 // Stop animations during resize - from: https://css-tricks.com/stop-animations-during-window-resizing/
 let resizeTimer;
 window.addEventListener("resize", () => {
