@@ -528,20 +528,29 @@ img.graphic {
   gap: clamp(0.5rem, 1.5vw, 1rem);
 }
 
-.photo-gallery__item {
-  display: block;
-  width: 100%;
+.photo-gallery__frame {
+  position: relative;
   min-width: 0;
-  height: auto;
+  min-height: 0;
   aspect-ratio: 4 / 3;
-  object-fit: cover;
+  overflow: hidden;
   border: 1px solid var(--clr-navy-100);
   border-radius: 1rem;
 }
 
-.photo-gallery__item:first-child {
+.photo-gallery__frame:first-child {
   grid-column: 1 / -1;
   aspect-ratio: 16 / 9;
+}
+
+.photo-gallery__item {
+  /* Fit a definite frame rather than resolving image height against a grid row. */
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .photo-gallery__item--lake {
@@ -825,13 +834,8 @@ footer {
     grid-template-rows: minmax(0, 3fr) minmax(0, 2fr);
   }
 
-  .photo-gallery__item {
-    height: 100%;
-    min-height: 0;
-    aspect-ratio: auto;
-  }
-
-  .photo-gallery__item:first-child {
+  .photo-gallery__frame,
+  .photo-gallery__frame:first-child {
     aspect-ratio: auto;
   }
 
