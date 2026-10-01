@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="background" x2="1" y2="1">
+      <stop stop-color="#1a3a50"/><stop offset="1" stop-color="#03111b"/>
+    </linearGradient>
+    <linearGradient id="accent">
+      <stop stop-color="#ff694d"/><stop offset="1" stop-color="#ffb6a3"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#background)"/>
+  <g fill="none" stroke="#395d70" stroke-width="2" opacity=".55">
+    <path d="M905 -40L1240 295M813 -40L1240 387M721 -40L1240 479"/>
+    <circle cx="1040" cy="171" r="145"/>
+    <circle cx="1040" cy="171" r="112"/>
+  </g>
+  <path d="M956 73L1127 244" stroke="url(#accent)" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="956" cy="73" r="8" fill="#ff9b84"/>
+  <circle cx="1127" cy="244" r="8" fill="#ff9b84"/>
+  <rect x="78" y="92" width="74" height="5" rx="2.5" fill="url(#accent)"/>
+  <g font-family="Arial, sans-serif">
+    <text x="72" y="237" fill="#f0f2ef" font-size="104" font-weight="700" letter-spacing="-4">James Fox</text>
+    <text x="78" y="324" fill="#ff9b84" font-size="39">Software, science</text>
+    <text x="78" y="378" fill="#ff9b84" font-size="39">and a bit of tinkering.</text>
+    <text x="78" y="454" fill="#b3c6d1" font-size="23">Full-stack development · Bioinformatics · Applied AI</text>
+    <text x="78" y="559" fill="#f0f2ef" font-size="25">james-fox.com</text>
+    <text x="1122" y="559" fill="#b3c6d1" font-size="21" text-anchor="end">Cambridge, UK</text>
+  </g>
+  <path d="M78 504H1122" stroke="#395d70"/>
+</svg>

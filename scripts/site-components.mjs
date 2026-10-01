@@ -1,10 +1,7 @@
-// Shared page chrome. Use these two hosts on each page:
+// Shared page chrome, rendered into the HTML by build-site.mjs.
 // <header data-site-header></header>
 // <footer id="contact" data-site-footer></footer>
-(() => {
-  const pagePath = window.location.pathname.replace(/\/index\.html$/, "/");
-  const header = document.querySelector("[data-site-header]");
-  const footer = document.querySelector("[data-site-footer]");
+export function renderHeader(pagePath) {
   const navigation = [
     { label: "Home", href: "/", current: pagePath === "/" },
     { label: "Experience", href: "/experience", current: pagePath === "/experience" || pagePath.startsWith("/experience/") },
@@ -12,8 +9,7 @@
     { label: "Contact", href: "/contact", current: pagePath === "/contact" || pagePath.startsWith("/contact/") },
   ];
 
-  if (header) {
-    header.innerHTML = `
+  return `
       <div class="flex header-wrapper">
         <a href="/" class="header-link">
           <img class="header__logo" src="/assets/images/logo_full_s.png" alt="James Fox — home">
@@ -35,10 +31,10 @@
         </nav>
       </div>
     `;
-  }
+}
 
-  if (footer) {
-    footer.innerHTML = `
+export function renderFooter() {
+  return `
       <div class="footer-wrapper">
         <div>
           <a class="footer-name" href="/">James Fox</a>
@@ -81,5 +77,4 @@
         <p class="footer-copyright">© ${new Date().getFullYear()} James Fox</p>
       </div>
     `;
-  }
-})();
+}

@@ -1,0 +1,19 @@
+# James Fox
+
+> Personal website of James Fox, a full-stack software developer and Senior AI Applied Innovation Specialist in AstraZeneca's Enterprise AI team, based in Cambridge, UK.
+
+The linked pages contain James's own descriptions of his work and interests. This is a personal portfolio, not an official website for any company named. The pages provide their main content as static HTML.
+
+## Biography and projects
+
+- [About James](https://james-fox.com/#whoami): Background in pharmaceutical R&D software, bioinformatics and applied AI, plus personal interests.
+- [Projects](https://james-fox.com/projects/): Project write-ups describing James's contributions and outcomes.
+- [RNAopt](https://james-fox.com/projects/#rnaopt): mRNA sequence optimisation software, batch processing, APIs and multi-objective optimisation. Some details are not public.
+- [Home lab](https://james-fox.com/projects/#home-lab): Ubuntu, Docker Compose, Wiki.js, PostgreSQL and self-hosted tools, with plans to expand documentation and automation.
+- [AI discovery](https://james-fox.com/projects/#rag-discovery): A retrieval-augmented generation (RAG) tool for discovering projects and expertise across AstraZeneca.
+
+## Public profiles
+
+- [GitHub](https://github.com/jamesfox96): James's public repositories.
+- [LinkedIn](https://www.linkedin.com/in/jamesfox96/): Professional profile.
+- [Home lab repository](https://github.com/jamesfox96/homelab): Public configuration and scripts for the home lab.

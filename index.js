@@ -25,6 +25,7 @@ function setMenuOpen(open) {
 }
 
 if (header && primaryNav && menuNavButton) {
+  document.documentElement.classList.remove("no-js");
   setMenuOpen(false);
   updateNavigationHeight();
   new ResizeObserver(updateNavigationHeight).observe(header);
@@ -50,10 +51,6 @@ if (header && primaryNav && menuNavButton) {
 
   mobileViewport.addEventListener("change", () => setMenuOpen(false));
 
-  // The component is inserted after parsing, so account for a footer hash on arrival.
-  if (window.location.hash === "#contact") {
-    document.getElementById("contact")?.scrollIntoView();
-  }
 }
 
 // Stop animations during resize - from: https://css-tricks.com/stop-animations-during-window-resizing/
