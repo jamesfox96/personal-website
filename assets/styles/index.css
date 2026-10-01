@@ -60,8 +60,15 @@ li {
 
 /* remove anchor tag decoration but keep pointer */
 a {
-  all: unset;
+  color: inherit;
+  text-decoration: none;
   cursor: pointer;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--clr-orange-300);
+  outline-offset: 4px;
 }
 
 /* END RESET */
@@ -138,6 +145,64 @@ h2 {
   font-size: 0.875rem;
 }
 
+/* Reusable titles, with or without supporting text. */
+.section-title {
+  text-align: center;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 2px;
+  margin: 1rem auto 0;
+  border-radius: 1rem;
+  background: linear-gradient(90deg, var(--clr-orange-400), var(--clr-orange-200));
+}
+
+.section-title--left {
+  text-align: start;
+}
+
+.section-title--left::after {
+  margin-inline: 0;
+}
+
+/* Reusable supporting text for section and page headings. */
+.section-intro {
+  max-width: 55ch;
+  margin: 1rem auto 2.5rem;
+  color: hsl(206, 20%, 76%);
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  font-weight: 300;
+  text-align: center;
+  line-height: 1.8;
+  text-wrap: pretty;
+}
+
+.section-intro--left {
+  margin-inline: 0;
+  text-align: start;
+}
+
+.section-cta {
+  margin: 2rem auto 0;
+}
+
+.content-page {
+  padding-bottom: 3rem;
+}
+
+.page-intro {
+  max-width: 65rem;
+  margin-inline: auto;
+  padding-block: 2rem;
+}
+
+.page-intro h1 {
+  font-size: clamp(2.25rem, 6vw, 3.5rem);
+}
+
 /* Layouts */
 .flex {
   display: flex;
@@ -159,6 +224,7 @@ header {
   z-index: 100;
   background-color: var(--clr-navy-100);
   width: 100%;
+  min-height: 4rem;
 }
 
 .header-wrapper {
@@ -206,6 +272,8 @@ main {
   /* height: 200vh; */
   /* overflow-x: hidden; */
   max-width: var(--max-width);
+  width: 100%;
+  min-width: 0;
   margin: 0 auto;
   padding: 1rem;
 }
@@ -417,22 +485,89 @@ img.graphic {
 footer {
   margin-top: auto;
   background-color: var(--clr-navy-700);
-  height: 15rem;
+  border-top: 1px solid var(--clr-navy-100);
   width: 100%;
+}
+
+.footer-wrapper {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 75rem;
+  margin-inline: auto;
+  padding: 2.5rem clamp(1rem, 3vw, 2rem);
+  line-height: 1.7;
+  text-align: center;
+}
+
+.footer-wrapper > * {
+  min-width: 0;
+}
+
+.footer-name {
+  display: inline-block;
+  margin-bottom: 0.4rem;
+  color: var(--clr-orange-300);
+  font-size: 1.25rem;
+  font-weight: var(--fw-bold);
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem 1rem;
+  list-style: none;
+}
+
+.footer-links a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 4rem;
+  padding: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.footer-links svg {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.footer-links a:hover,
+.link_header:hover {
+  color: var(--clr-orange-300);
+}
+
+.footer-copyright {
+  color: hsl(206, 20%, 76%);
+  font-size: 0.875rem;
+}
+
+@media (min-width: 56em) {
+  .footer-wrapper {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 /* Mobile nav button */
 @media (max-width: 40em) {
   .primary-navigation {
     position: fixed;
-    inset: 0 0 0 40%;
+    inset: 0 0 0 auto;
+    width: min(85vw, 22rem);
     z-index: 1000;
     flex-direction: column;
     padding: min(20vh, 4em) 2rem;
     background-color: var(--clr-navy-100);
 
     transform: translateX(100%);
-    transition: 0.15s ease-in-out;
+    visibility: hidden;
+    transition: transform 150ms ease-in-out, visibility 150ms;
   }
 
   @supports (backdrop-filter: blur(1rem)) {
@@ -460,6 +595,7 @@ footer {
     aspect-ratio: 1;
     z-index: 9999;
     background-color: transparent;
+    cursor: pointer;
     transition: 0.1s ease-in-out;
   }
 
@@ -482,7 +618,7 @@ footer {
 
   .primary-navigation[open] {
     transform: translateX(0%);
-    transition: 0.15s ease-in-out;
+    visibility: visible;
   }
 
   .mobile-nav-toggle[open] span:nth-child(1) {
@@ -499,6 +635,18 @@ footer {
     translate: 0
       calc(-1 * (var(--hamburger-span-gap) + var(--hamburger-span-height)));
     rotate: -45deg;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .primary-navigation,
+  .mobile-nav-toggle,
+  .mobile-nav-toggle span {
+    transition: none;
   }
 }
 
@@ -535,12 +683,6 @@ footer {
 
   .hero__cta {
     margin: 4rem 0 0;
-  }
-
-  h2#whoami {
-    text-align: center;
-    width: 50%;
-    justify-self: end;
   }
 
   .about-wrapper {

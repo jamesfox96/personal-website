@@ -1,42 +1,64 @@
 const header = document.querySelector("header");
 const primaryNav = document.querySelector(".primary-navigation");
 const menuNavButton = document.getElementById("menu-nav-button");
-const navigationHeight = document.querySelector("header").offsetHeight;
+const mobileViewport = window.matchMedia("(max-width: 40em)");
 
-document.documentElement.style.setProperty(
-  "--scroll-padding",
-  navigationHeight + 1 + "px"
-);
+function updateNavigationHeight() {
+  document.documentElement.style.setProperty(
+    "--scroll-padding",
+    header.offsetHeight + 16 + "px"
+  );
+}
 
-// Hide mobile nav menu when user clicks away from header
-document.addEventListener("click", (e) => {
-  if (menuNavButton.hasAttribute("open")) {
-    if (!header.contains(e.target)) {
-      mobileNavClick();
-    }
-  }
-});
-
-function mobileNavClick() {
-  let open = menuNavButton.toggleAttribute("open");
-  if (open) {
-    menuNavButton.setAttribute("aria-expanded", "true");
-    primaryNav.setAttribute("open", "true");
-    primaryNav.setAttribute("aria-hidden", "false");
+function setMenuOpen(open) {
+  const isMobile = mobileViewport.matches;
+  const isOpen = isMobile && open;
+  menuNavButton.toggleAttribute("open", isOpen);
+  menuNavButton.setAttribute("aria-expanded", String(isOpen));
+  primaryNav.toggleAttribute("open", isOpen);
+  primaryNav.inert = isMobile && !isOpen;
+  if (isMobile) {
+    primaryNav.setAttribute("aria-hidden", String(!isOpen));
   } else {
-    menuNavButton.setAttribute("aria-expanded", "false");
-    primaryNav.removeAttribute("open");
-    primaryNav.setAttribute("aria-hidden", "true");
+    primaryNav.removeAttribute("aria-hidden");
+  }
+}
+
+if (header && primaryNav && menuNavButton) {
+  setMenuOpen(false);
+  updateNavigationHeight();
+  new ResizeObserver(updateNavigationHeight).observe(header);
+
+  menuNavButton.addEventListener("click", () => {
+    setMenuOpen(!menuNavButton.hasAttribute("open"));
+  });
+
+  primaryNav.addEventListener("click", (event) => {
+    if (event.target.closest("a")) setMenuOpen(false);
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!header.contains(event.target)) setMenuOpen(false);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && menuNavButton.hasAttribute("open")) {
+      setMenuOpen(false);
+      menuNavButton.focus();
+    }
+  });
+
+  mobileViewport.addEventListener("change", () => setMenuOpen(false));
+
+  // The component is inserted after parsing, so account for a footer hash on arrival.
+  if (window.location.hash === "#contact") {
+    document.getElementById("contact")?.scrollIntoView();
   }
 }
 
 // Stop animations during resize - from: https://css-tricks.com/stop-animations-during-window-resizing/
 let resizeTimer;
 window.addEventListener("resize", () => {
-  // Remove aria-hidden when nav bar switches from mobile view
-  if (!menuNavButton.checkVisibility()) {
-    primaryNav.removeAttribute("aria-hidden");
-  }
   document.body.classList.add("resize-animation-stopper");
   clearTimeout(resizeTimer);
   resizeTimer = setTimeout(() => {

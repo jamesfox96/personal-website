@@ -1,0 +1,173 @@
+/* Project previews and the full projects page share the site's text panels. */
+.selected-projects {
+  padding-bottom: 3rem;
+}
+
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  width: 100%;
+  max-width: 75rem;
+  margin-inline: auto;
+}
+
+.project-card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 19rem;
+  min-width: 0;
+  width: 100%;
+  max-width: 24rem;
+  padding: 1rem;
+  overflow-wrap: anywhere;
+  transition: transform 200ms ease, border-color 200ms ease;
+}
+
+.project-card__thumbnail {
+  display: block;
+  flex-shrink: 0;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 0.65rem;
+  background-color: var(--clr-navy-300);
+}
+
+.project-card__body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 1rem;
+  min-width: 0;
+  padding: 1.25rem 0.25rem 0.5rem;
+}
+
+.project-card h3 {
+  font-size: 1.5rem;
+  font-weight: var(--fw-bold);
+  line-height: 1.25;
+}
+
+.project-category {
+  color: var(--clr-orange-300);
+  font-size: 0.75rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.project-tags li {
+  padding: 0.2rem 0.65rem;
+  border: 1px solid var(--clr-navy-100);
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.project-card .project-tags {
+  margin-top: auto;
+}
+
+.project-card__link {
+  color: var(--clr-orange-300);
+  font-weight: var(--fw-bold);
+}
+
+.project-card:is(:hover, :focus-visible) {
+  border-color: var(--clr-orange-300);
+  transform: translateY(-4px);
+}
+
+.project-card:is(:hover, :focus-visible) .project-card__link {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.project-card:focus-visible,
+.project-index a:focus-visible {
+  outline: 2px solid var(--clr-orange-300);
+  outline-offset: 4px;
+}
+
+/* Detail-page layout */
+.project-details {
+  max-width: 65rem;
+  margin-inline: auto;
+}
+
+.project-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.project-index a {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--clr-navy-100);
+  border-radius: 0.5rem;
+}
+
+.project-index a:hover {
+  border-color: var(--clr-orange-300);
+  color: var(--clr-orange-300);
+}
+
+.project-details {
+  display: grid;
+  gap: 2rem;
+}
+
+.project-detail {
+  max-width: none;
+}
+
+.project-detail h2 {
+  margin-block: 0.5rem 1rem;
+  text-align: start;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+}
+
+.project-detail h3 {
+  margin-block: 1.5rem 0.5rem;
+  font-size: 1.125rem;
+  font-weight: var(--fw-bold);
+  color: var(--clr-orange-300);
+}
+
+.project-detail .project-tags {
+  margin-top: 1.5rem;
+}
+
+.project-repo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 100%;
+  margin-top: 1.5rem;
+  padding: 0.65rem 1.25rem;
+}
+
+.project-repo-link svg {
+  flex-shrink: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card {
+    transition: none;
+  }
+
+  .project-card:is(:hover, :focus-visible) {
+    transform: none;
+  }
+}

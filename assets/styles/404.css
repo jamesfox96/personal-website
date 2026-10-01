@@ -1,22 +1,23 @@
 .message {
-  padding-top: 20vh;
+  padding-block: clamp(3rem, 12vh, 8rem) 3rem;
+  max-width: 50rem;
   margin-inline: auto;
   text-align: center;
 }
 
-h1 {
+.message h1 {
   font-size: 3rem;
   color: var(--clr-orange-500, orange);
 }
 
-h2 {
+.message h2 {
   padding-bottom: 2rem;
 }
 
-p {
+.message p {
   padding-block: 1rem;
 }
 
-a {
+.message a {
   text-decoration: underline;
 }

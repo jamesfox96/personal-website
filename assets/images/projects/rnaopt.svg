@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" fill="none">
+  <defs>
+    <linearGradient id="background" x2="640" y2="360" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#183c50"/><stop offset="1" stop-color="#081e2d"/>
+    </linearGradient>
+    <linearGradient id="ribosome" x1="230" y1="158" x2="420" y2="307" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#b8cda1"/><stop offset="1" stop-color="#719f91"/>
+    </linearGradient>
+    <linearGradient id="transfer" x2="0" y2="1">
+      <stop stop-color="#f9df9e"/><stop offset="1" stop-color="#dcad60"/>
+    </linearGradient>
+    <g id="trna" stroke="#102c40" stroke-width="3" stroke-linejoin="round">
+      <path d="M-8 0H8V21L26 29V45H10V65H-10V45H-26V29L-8 21Z" fill="url(#transfer)"/>
+      <path d="M-7 64V73M0 65V75M7 64V73" stroke="#f9df9e" stroke-linecap="round"/>
+      <path d="M0 7V27M-15 36H15M0 44V56" stroke="#b1844e" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  </defs>
+  <rect width="640" height="360" fill="url(#background)"/>
+  <circle cx="326" cy="189" r="142" fill="#274a59" opacity=".35"/>
+  <circle cx="326" cy="189" r="119" stroke="#91b4b7" stroke-opacity=".12" stroke-dasharray="3 10"/>
+  <!-- Two ribosomal subunits cradle a single messenger RNA strand. -->
+  <path d="M215 260C203 279 224 307 255 311C292 315 310 306 340 312C379 320 414 301 414 280C414 266 402 258 385 256Z"
+    fill="#658f87" stroke="#0b2331" stroke-width="4"/>
+  <path d="M201 242C195 213 214 180 244 169C260 145 294 150 309 160C336 139 365 153 376 171C411 175 432 209 425 241L403 255H220Z"
+    fill="url(#ribosome)" stroke="#0b2331" stroke-width="4"/>
+  <path d="M218 217C227 189 245 187 257 182M363 181C387 183 401 197 407 213"
+    stroke="#e0e5b7" stroke-opacity=".6" stroke-width="5" stroke-linecap="round"/>
+  <!-- Minimal tRNA shapes: one arriving, two docked, one leaving. -->
+  <use href="#trna" transform="translate(139 131) rotate(-28)"/>
+  <use href="#trna" transform="translate(285 160)"/>
+  <use href="#trna" transform="translate(345 160)"/>
+  <use href="#trna" transform="translate(481 119) rotate(25)"/>
+  <path d="M473 102L481 119M345 140V160M285 139V160" stroke="#bfd3d0" stroke-width="4"/>
+  <!-- A growing peptide chain replaces the source diagram's labels. -->
+  <path d="M285 137C249 126 260 100 222 102S175 70 197 44" stroke="#f7b19e" stroke-width="5"/>
+  <g fill="#f38d79" stroke="#142e3c" stroke-width="3">
+    <circle cx="285" cy="139" r="14"/><circle cx="258" cy="122" r="15"/>
+    <circle cx="229" cy="103" r="15"/><circle cx="198" cy="92" r="15"/>
+    <circle cx="186" cy="66" r="15"/><circle cx="198" cy="40" r="15"/>
+    <circle cx="345" cy="140" r="14"/><circle cx="473" cy="101" r="15"/>
+  </g>
+  <g fill="#ffd1b9" opacity=".8">
+    <circle cx="281" cy="135" r="4"/><circle cx="254" cy="118" r="4"/>
+    <circle cx="225" cy="99" r="4"/><circle cx="194" cy="88" r="4"/>
+    <circle cx="182" cy="62" r="4"/><circle cx="194" cy="36" r="4"/>
+    <circle cx="341" cy="136" r="4"/><circle cx="469" cy="97" r="4"/>
+  </g>
+  <!-- RNA bases are colour-coded, keeping the thumbnail free of tiny text. -->
+  <path d="M49 257C128 247 171 260 235 254S351 250 408 255S511 259 590 247"
+    stroke="#0b2331" stroke-width="18" stroke-linecap="round"/>
+  <path d="M49 257C128 247 171 260 235 254S351 250 408 255S511 259 590 247"
+    stroke="#9fc9bf" stroke-width="10" stroke-linecap="round"/>
+  <g stroke-width="7" stroke-linecap="round">
+    <path d="M64 253V239M124 251V237M184 254V240M244 250V236M304 249V235M364 251V237M424 254V240M484 254V240M544 250V236" stroke="#f4bb85"/>
+    <path d="M84 252V238M144 252V238M204 253V239M264 250V236M324 249V235M384 252V238M444 254V240M504 253V239M564 247V233" stroke="#8bc0cb"/>
+    <path d="M104 251V237M164 253V239M224 252V238M284 249V235M344 250V236M404 253V239M464 254V240M524 252V238M584 245V231" stroke="#e99285"/>
+  </g>
+  <g stroke="#b2cccb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity=".65">
+    <path d="M170 213L147 197M147 197L150 207M147 197L157 196"/>
+    <path d="M459 194L443 218M443 218L444 207M443 218L453 215"/>
+  </g>
+</svg>

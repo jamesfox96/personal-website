@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" fill="none">
+  <defs>
+    <linearGradient id="background" x2="640" y2="360" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#183c50"/><stop offset="1" stop-color="#081e2d"/>
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop stop-color="#f4b58a" stop-opacity=".16"/><stop offset="1" stop-color="#f4b58a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="lens" x2="1" y2="1">
+      <stop stop-color="#31576a"/><stop offset="1" stop-color="#173747"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#background)"/>
+  <ellipse cx="335" cy="181" rx="216" ry="176" fill="url(#glow)"/>
+  <!-- A question enters the search; retrieved evidence connects to people. -->
+  <g stroke="#658b99" stroke-width="2" stroke-dasharray="4 7" stroke-linecap="round">
+    <path d="M170 119C225 119 203 169 259 169M181 251C228 251 214 202 261 202"/>
+    <path d="M379 160C419 160 408 99 460 99M387 185H459M379 211C416 211 414 273 460 273"/>
+  </g>
+  <!-- A small stack of project documents. -->
+  <rect x="73" y="64" width="97" height="112" rx="10" transform="rotate(-9 73 64)" fill="#203f50" stroke="#486c7f" stroke-width="2"/>
+  <rect x="91" y="67" width="97" height="112" rx="10" fill="#c5d7d4" stroke="#0b2331" stroke-width="3"/>
+  <path d="M108 87H136M108 135H169M108 148H154" stroke="#6f9397" stroke-width="5" stroke-linecap="round"/>
+  <path d="M109 121L125 108L140 118L168 95" stroke="#356a78" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="168" cy="95" r="5" fill="#e88972"/>
+  <!-- The query is a speech bubble rather than an unreadable text label. -->
+  <path d="M106 212H174C183 212 189 218 189 227V258C189 267 183 273 174 273H141L123 288V273H106C97 273 91 267 91 258V227C91 218 97 212 106 212Z"
+    fill="#24495c" stroke="#88acb6" stroke-width="2"/>
+  <path d="M132 231C132 221 150 221 150 232C150 239 140 238 140 246" stroke="#e2d5b6" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="140" cy="255" r="2.5" fill="#e2d5b6"/>
+  <!-- Search lens with an evidence card and source markers. -->
+  <circle cx="322" cy="177" r="77" stroke="#e8ae83" stroke-opacity=".12" stroke-width="15"/>
+  <path d="M368 225L412 269" stroke="#0b2331" stroke-width="24" stroke-linecap="round"/>
+  <path d="M368 225L412 269" stroke="#dca278" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="322" cy="177" r="66" fill="url(#lens)" stroke="#f2be91" stroke-width="7"/>
+  <path d="M273 163C278 144 290 134 305 130" stroke="#f8dac0" stroke-width="4" stroke-linecap="round" opacity=".5"/>
+  <rect x="290" y="148" width="64" height="59" rx="8" fill="#d1ded8"/>
+  <path d="M302 162H342M302 174H333M302 186H324" stroke="#648b94" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="340" cy="204" r="12" fill="#ee947b" stroke="#193c4d" stroke-width="3"/>
+  <path d="M335 204L339 208L346 200" stroke="#193c4d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Three matched experts, with the strongest result highlighted. -->
+  <g stroke="#7195a2" stroke-width="2">
+    <rect x="461" y="66" width="107" height="65" rx="12" fill="#203f50"/>
+    <rect x="449" y="153" width="131" height="68" rx="12" fill="#294b59" stroke="#eaa080"/>
+    <rect x="461" y="241" width="107" height="65" rx="12" fill="#203f50"/>
+  </g>
+  <g fill="#a5c4c7">
+    <circle cx="485" cy="91" r="8"/><path d="M473 115C473 100 497 100 497 115Z"/>
+    <circle cx="485" cy="265" r="8"/><path d="M473 289C473 274 497 274 497 289Z"/>
+  </g>
+  <g fill="#f0b69b">
+    <circle cx="477" cy="178" r="9"/><path d="M463 204C463 187 491 187 491 204Z"/>
+  </g>
+  <g stroke="#7296a2" stroke-width="4" stroke-linecap="round">
+    <path d="M511 91H550M511 104H537M511 266H550M511 279H535"/>
+    <path d="M505 178H562M505 192H542" stroke="#c5d7d4"/>
+  </g>
+  <g fill="#edb28b">
+    <circle cx="222" cy="156" r="3"/><circle cx="423" cy="185" r="4"/>
+    <path d="M399 80L402 88L410 91L402 94L399 102L396 94L388 91L396 88Z"/>
+  </g>
+</svg>

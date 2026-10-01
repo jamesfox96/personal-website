@@ -11,6 +11,9 @@
     <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
     <title>James Fox</title>
     <link rel="stylesheet" href="./assets/styles/index.css" />
+    <link rel="stylesheet" href="./assets/styles/projects.css" />
+    <script src="/assets/scripts/site-components.js" defer></script>
+    <script src="/index.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,51 +24,8 @@
   </head>
 
   <body>
-    <header>
-      <div class="flex header-wrapper">
-        <a href="./" class="header-link"
-          ><img
-            class="header__logo"
-            src="./assets/images/logo_full_s.png"
-            alt="logo"
-        /></a>
-        <button
-          id="menu-nav-button"
-          onclick="mobileNavClick()"
-          class="mobile-nav-toggle"
-          aria-controls="primary-navigation"
-          aria-label="Menu"
-          aria-expanded="false"
-        >
-          <span></span><span></span><span></span>
-        </button>
-        <nav>
-          <ul id="primary-navigation" class="primary-navigation flex">
-            <li class="active">
-              <a class="link_header" href=""
-                ><span aria-hidden="true" class="nav-number">00</span>Home</a
-              >
-            </li>
-            <li>
-              <a class="link_header" href=""
-                ><span aria-hidden="true" class="nav-number">01</span
-                >Experience</a
-              >
-            </li>
-            <li>
-              <a class="link_header" href=""
-                ><span aria-hidden="true" class="nav-number">02</span
-                >Projects</a
-              >
-            </li>
-            <li>
-              <a class="link_header" href=""
-                ><span aria-hidden="true" class="nav-number">03</span>Contact</a
-              >
-            </li>
-          </ul>
-        </nav>
-      </div>
+    <header data-site-header>
+      <a class="header-link" href="/">James Fox — Home</a>
     </header>
     <main>
       <div class="grid hero">
@@ -94,7 +54,7 @@
         <line x1="0" y1="100%" x2="100%" y2="0" />
       </svg>
       <section>
-        <h2 id="whoami">whoami</h2>
+        <h2 id="whoami" class="section-title">whoami</h2>
         <div class="grid about-wrapper">
           <div class="text-panel">
             <p>
@@ -218,9 +178,118 @@
       <svg xmlns="http://www.w3.org/2000/svg" class="diagonal">
         <line x1="100%" y1="100%" x2="0" y2="0" />
       </svg>
+      <section class="selected-projects" aria-labelledby="projects">
+        <h2 id="projects" class="section-title">Some things I've done</h2>
+        <p class="section-intro">
+          From helping scientists design mRNA to finding another excuse to run a
+          server at home. A few things I've been building.
+        </p>
+        <div class="project-grid">
+          <a
+            class="text-panel project-card"
+            href="/projects/#rnaopt"
+            aria-labelledby="rnaopt-card-title"
+          >
+            <img
+              class="project-card__thumbnail"
+              src="/assets/images/projects/rnaopt.svg"
+              alt=""
+              width="640"
+              height="360"
+              loading="lazy"
+            />
+            <div class="project-card__body">
+              <p class="project-category">Scientific software</p>
+              <h3 id="rnaopt-card-title">RNAopt</h3>
+              <p>
+                Helping scientists optimise mRNA sequences for expression, with
+                an in-house web application, batch processing and an API for
+                larger workflows.
+              </p>
+              <ul class="project-tags" aria-label="Topics">
+                <li>Full-stack</li>
+                <li>Bioinformatics</li>
+                <li>REST API</li>
+              </ul>
+              <span class="project-card__link"
+                >Read more <span aria-hidden="true">→</span></span
+              >
+            </div>
+          </a>
+          <a
+            class="text-panel project-card"
+            href="/projects/#home-lab"
+            aria-labelledby="home-lab-card-title"
+          >
+            <img
+              class="project-card__thumbnail"
+              src="/assets/images/projects/home-lab-960.webp"
+              srcset="/assets/images/projects/home-lab-480.webp 480w,
+                      /assets/images/projects/home-lab-960.webp 960w"
+              sizes="(max-width: 416px) calc(100vw - 4rem), 350px"
+              alt=""
+              width="640"
+              height="360"
+              loading="lazy"
+            />
+            <div class="project-card__body">
+              <p class="project-category">Personal project</p>
+              <h3 id="home-lab-card-title">Home lab</h3>
+              <p>
+                An Ubuntu server, a stack of Docker containers and a growing
+                list of things to try (read: 'break'). My own space to host
+                applications and learn by doing.
+              </p>
+              <ul class="project-tags" aria-label="Topics">
+                <li>Ubuntu Server</li>
+                <li>Docker</li>
+                <li>Self-hosting</li>
+              </ul>
+              <span class="project-card__link"
+                >Read more <span aria-hidden="true">→</span></span
+              >
+            </div>
+          </a>
+          <a
+            class="text-panel project-card"
+            href="/projects/#rag-discovery"
+            aria-labelledby="rag-card-title"
+          >
+            <img
+              class="project-card__thumbnail"
+              src="/assets/images/projects/ai-discovery.svg"
+              alt=""
+              width="640"
+              height="360"
+              loading="lazy"
+            />
+            <div class="project-card__body">
+              <p class="project-category">Applied AI</p>
+              <h3 id="rag-card-title">Finding expertise with AI</h3>
+              <p>
+                A RAG tool that helps colleagues discover projects and
+                subject-matter experts at AstraZeneca, starting with a
+                plain-language query.
+              </p>
+              <ul class="project-tags" aria-label="Topics">
+                <li>RAG</li>
+                <li>LLMs</li>
+                <li>Knowledge discovery</li>
+              </ul>
+              <span class="project-card__link"
+                >Read more <span aria-hidden="true">→</span></span
+              >
+            </div>
+          </a>
+        </div>
+        <a class="cta-button gradient-border section-cta" href="/projects/"
+          >All projects</a
+        >
+      </section>
       <!-- <div class="cf-turnstile" data-sitekey="0x4AAAAAAA1oUxJn9dAxHhHe" data-callback="javascriptCallback"></div> -->
     </main>
-    <footer></footer>
+    <footer id="contact" data-site-footer>
+      <a href="/contact">Contact James Fox</a>
+    </footer>
   </body>
-  <script src="index.js" defer></script>
 </html>

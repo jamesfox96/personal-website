@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Projects by James Fox: RNAopt, a self-hosted home lab and AI-powered project and expertise discovery."
+    />
+    <title>Projects | James Fox</title>
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/assets/styles/index.css" />
+    <link rel="stylesheet" href="/assets/styles/projects.css" />
+    <script src="/assets/scripts/site-components.js" defer></script>
+    <script src="/index.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header data-site-header>
+      <a class="header-link" href="/">James Fox — Home</a>
+    </header>
+    <main class="content-page">
+      <div class="page-intro">
+        <h1 class="section-title section-title--left">Projects</h1>
+        <p class="section-intro section-intro--left">
+          Useful tools, scientific problems and a bit of after-hours tinkering.
+          Here's a closer look at some of the things I've been working on. I'll
+          make this page prettier at some point, I promise.
+        </p>
+        <nav class="project-index" aria-label="Jump to a project">
+          <a href="#rnaopt">RNAopt</a>
+          <a href="#home-lab">Home lab</a>
+          <a href="#rag-discovery">AI discovery</a>
+        </nav>
+      </div>
+      <div class="project-details">
+        <article
+          id="rnaopt"
+          class="text-panel project-detail"
+          aria-labelledby="rnaopt-title"
+        >
+          <p class="project-category">AstraZeneca · Scientific software</p>
+          <h2 id="rnaopt-title" class="section-title section-title--left">
+            RNAopt
+          </h2>
+          <p>
+            RNAopt is a bespoke, in-house tool for optimising mRNA sequences for
+            expression across different therapeutic modalities. My work has
+            spanned both the application scientists use and the optimisation
+            behind it.
+          </p>
+          <h3>The problem</h3>
+          <p>
+            Sequence optimisation involves competing objectives. At AstraZeneca
+            we developed an algorithm that combines approaches in a
+            multi-objective landscape. Scientists need a way to explore those
+            trade-offs and run computationally expensive optimisation as part of
+            their everyday workflows. Exploring all possible sequences is
+            computationally infeasible, necessitating efficient optimisation
+            strategies.
+          </p>
+          <h3>My contribution</h3>
+          <p>
+            I built the RNAopt web application, providing scientists with an
+            intuitive interface to run our sequence optimisation algorithm
+            themselves. I extended RNAopt with batch processing and a REST API,
+            allowing submissions to be decoupled from the web interface. I also
+            developed an algorithm combining RNAopt's optimised secondary
+            structure with outputs from a leading published tool, exploring a
+            three-dimensional Pareto frontier of optimal sequences.
+          </p>
+          <h3>Outcome</h3>
+          <p>
+            The combined approach demonstrated improved expression. The work was
+            runner-up in the AZ R&amp;D awards, with a patent pending. Until
+            published, I must refrain from saying more. If I did, I would have
+            to kill you.
+          </p>
+          <p>/s It'd be too hard anyway, let alone the moral implications...</p>
+          <ul class="project-tags" aria-label="Topics">
+            <li>Full-stack development</li>
+            <li>Bioinformatics</li>
+            <li>REST API</li>
+            <li>Multi-objective optimisation</li>
+          </ul>
+        </article>
+        <article
+          id="home-lab"
+          class="text-panel project-detail"
+          aria-labelledby="home-lab-title"
+        >
+          <p class="project-category">Personal project · Ongoing</p>
+          <h2 id="home-lab-title" class="section-title section-title--left">
+            Home lab
+          </h2>
+          <p>
+            My home lab is an Ubuntu Server setup running self-hosted
+            applications with Docker Compose. It's a practical extension of the
+            tinkering that got me into programming in the first place, and a
+            place to try new stuff out.
+          </p>
+          <h3>What's in place</h3>
+          <p>
+            A Wiki.js knowledge base runs on PostgreSQL (otherwise I'd forget
+            how I did everything), with custom styling and a Cloudflare Tunnel
+            for access. Alongside it, a Jellyfin-based media server brings
+            together library management, requests and subtitles, with supporting
+            services configured through Compose.
+          </p>
+          <p>
+            The infrastructure is part of the project too: persistent storage
+            (saving pennies to build a NAS, will report back in 1000 years when
+            drive prices have reduced), container health checks and startup
+            dependencies, plus VPN networking through Gluetun and WireGuard for
+            selected services. I've added automated port synchronisation and a
+            Bash script to check container status, forwarded ports and whether
+            traffic is using the VPN.
+          </p>
+          <h3>Why it interests me</h3>
+          <p>
+            I could lie and say it's all about the learning, but the dopamine
+            hit of actually getting something running that is useful to people
+            other than just me is pretty addictive. I enjoy researching stuff,
+            getting that stuff deployed, understanding how that stuff runs and
+            keeping it all alive. Keeping the configuration and scripts in Git
+            makes the setup easier should I accidentally nuke everything. It's
+            also handy to share with friends / family who are interested in
+            doing something similar. Although, I should note: that's all done at
+            one's own risk...
+          </p>
+          <h3>What's next</h3>
+          <p>
+            I want to expand the wiki into a more useful collection of setup
+            notes, guides and things I've learned, then keep adding tools and
+            automation that make everyday tasks simpler. Eventually I'll build
+            that NAS, and who knows, maybe I'll invest in some GPUs and host my
+            own LLMs??
+          </p>
+          <ul class="project-tags" aria-label="Technologies">
+            <li>Ubuntu Server</li>
+            <li>Docker Compose</li>
+            <li>Wiki.js</li>
+            <li>PostgreSQL</li>
+            <li>Bash</li>
+            <li>Self-hosting</li>
+          </ul>
+          <a
+            class="cta-button gradient-border project-repo-link"
+            href="https://github.com/jamesfox96/homelab"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width="22"
+              height="22"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7a5.44 5.44 0 0 0-1.5-3.78A5.07 5.07 0 0 0 18.91 1S17.73.65 15 2.48a13.38 13.38 0 0 0-6 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77 5.44 5.44 0 0 0 3.5 8.55c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+              />
+            </svg>
+            <span>View on GitHub</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+        <article
+          id="rag-discovery"
+          class="text-panel project-detail"
+          aria-labelledby="rag-title"
+        >
+          <p class="project-category">AstraZeneca · Applied AI</p>
+          <h2 id="rag-title" class="section-title section-title--left">
+            Finding expertise with AI
+          </h2>
+          <p>
+            A retrieval-augmented generation (RAG) tool that lets colleagues
+            find projects and subject-matter experts at AstraZeneca using a
+            plain-language query.
+          </p>
+          <h3>The problem</h3>
+          <p>
+            Two main ones come to mind: a reorg happened and I was placed in a
+            team where I had little experience of the domain, and secondly, in a
+            company of 80000 people it's very hard to find subject matter
+            experts and overlapping projects. I wanted to build something from
+            scratch to learn the ropes, and make a tool that could help me find
+            people and projects in the company.
+          </p>
+          <h3>My contribution</h3>
+          <p>
+            I built a tool that indexes certain documents on the company
+            sharepoint and sticks on the semantic meaning into a vector
+            database. This allows colleagues to query the database in plain
+            language and retrieve relevant projects and experts efficiently. I
+            then focussed on optimising the tool to find relevant material
+            quicker and more reliably. Building the tool was one thing, making
+            it useful was a whole other challenge.
+          </p>
+          <h3>Where it led</h3>
+          <p>
+            The project came full circle and actually got me in contact with
+            other people in the business working on similar ideas. I now have
+            ongoing collaborations with them.
+          </p>
+          <ul class="project-tags" aria-label="Topics">
+            <li>RAG</li>
+            <li>Large language models</li>
+            <li>Knowledge discovery</li>
+          </ul>
+        </article>
+      </div>
+      <a class="cta-button gradient-border section-cta" href="/#projects"
+        >Back to home</a
+      >
+    </main>
+    <footer id="contact" data-site-footer>
+      <a href="/contact">Contact James Fox</a>
+    </footer>
+  </body>
+</html>
