@@ -7,6 +7,8 @@ The linked pages contain James's own descriptions of his work and interests. Thi
 ## Biography and projects
 
 - [About James](https://james-fox.com/#whoami): Background in pharmaceutical R&D software, bioinformatics and applied AI, plus personal interests.
+- [Experience and CV](https://james-fox.com/experience/): Career history at AstraZeneca and GSK, education and technical skills.
+- [Download James's CV (PDF)](https://james-fox.com/assets/documents/james-fox-cv.pdf): James's CV, with direct contact details removed for public sharing.
 - [Projects](https://james-fox.com/projects/): Project write-ups describing James's contributions and outcomes.
 - [RNAopt](https://james-fox.com/projects/#rnaopt): mRNA sequence optimisation software, batch processing, APIs and multi-objective optimisation. Some details are not public.
 - [Home lab](https://james-fox.com/projects/#home-lab): Ubuntu, Docker Compose, Wiki.js, PostgreSQL and self-hosted tools, with plans to expand documentation and automation.

@@ -5,6 +5,7 @@ import { renderHeader, renderFooter } from "./site-components.mjs";
 const pages = [
   { file: "index.html", path: "/" },
   { file: "projects/index.html", path: "/projects/" },
+  { file: "experience/index.html", path: "/experience/" },
   { file: "404.html", path: "/404.html" },
 ];
 const check = process.argv.includes("--check");

@@ -217,6 +217,18 @@ h2 {
   color: var(--clr-orange-300);
 }
 
+.inline-link {
+  color: var(--clr-orange-300);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+.inline-link:is(:hover, :focus-visible) {
+  color: var(--clr-orange-200);
+  text-decoration-thickness: 2px;
+}
+
 /* Classes */
 header {
   position: sticky;

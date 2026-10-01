@@ -1,0 +1,286 @@
+/* Shared timeline for the homepage preview and the full career history. */
+.experience-preview {
+  padding-bottom: 3rem;
+}
+
+.experience-preview__panel,
+.experience-content {
+  width: 100%;
+  max-width: 65rem;
+  margin-inline: auto;
+}
+
+.career-timeline {
+  list-style: none;
+  border-left: 1px solid var(--clr-navy-100);
+  margin-left: 0.4rem;
+  padding-left: clamp(1.25rem, 3vw, 2rem);
+}
+
+.timeline-entry {
+  position: relative;
+  display: grid;
+  gap: 0.75rem;
+  max-width: none;
+  padding-bottom: 2rem;
+}
+
+.timeline-entry:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-entry::before {
+  content: "";
+  position: absolute;
+  top: 0.4rem;
+  left: calc(-1 * clamp(1.25rem, 3vw, 2rem) - 0.35rem);
+  width: 0.65rem;
+  height: 0.65rem;
+  border: 2px solid var(--clr-orange-300);
+  border-radius: 50%;
+  background: var(--clr-surface);
+}
+
+.timeline-entry--current::before {
+  background: var(--clr-orange-300);
+  box-shadow: 0 0 0 5px hsl(10, 100%, 70%, 0.1);
+}
+
+.timeline-date,
+.role-organisation {
+  color: var(--clr-orange-300);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.timeline-entry h3 {
+  font-size: clamp(1.125rem, 2.5vw, 1.4rem);
+  font-weight: var(--fw-bold);
+  line-height: 1.35;
+}
+
+.timeline-summary {
+  margin-top: 0.5rem;
+  line-height: 1.7;
+}
+
+.experience-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.experience-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.experience-index a {
+  display: block;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--clr-navy-100);
+  border-radius: 0.5rem;
+}
+
+.experience-index a:hover,
+.experience-content a:hover {
+  color: var(--clr-orange-300);
+}
+
+.cv-download {
+  margin-left: auto;
+  color: var(--clr-text);
+  cursor: pointer;
+}
+
+.experience-section {
+  margin-top: 2.5rem;
+}
+
+.experience-section > h2 {
+  margin-bottom: 2rem;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+}
+
+.role-card {
+  max-width: none;
+  min-width: 0;
+}
+
+.role-organisation {
+  margin-bottom: 0.5rem;
+}
+
+.role-highlights {
+  margin-top: 1rem;
+  padding-left: 1.2rem;
+  line-height: 1.7;
+}
+
+.role-highlights li + li {
+  margin-top: 0.65rem;
+}
+
+.role-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--clr-orange-300);
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.education-grid,
+.skills-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.education-card {
+  max-width: none;
+}
+
+.education-card h3,
+.skills-grid dt {
+  font-size: 1.125rem;
+  font-weight: var(--fw-bold);
+  margin-block: 0.5rem;
+}
+
+.education-earlier {
+  margin-top: 1.25rem;
+  line-height: 1.7;
+}
+
+.skills-grid > div {
+  min-width: 0;
+}
+
+.skills-grid dt {
+  color: var(--clr-orange-300);
+}
+
+.skills-grid dd {
+  line-height: 1.7;
+}
+
+.cv-identity {
+  display: none;
+}
+
+@media (min-width: 48em) {
+  .timeline-entry {
+    grid-template-columns: 10rem minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+
+  .education-grid,
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Keep the experience page readable when printed through the browser. */
+@media print {
+  @page {
+    margin: 16mm;
+  }
+
+  html,
+  body.experience-page {
+    color-scheme: light;
+    background: white;
+    color: #17242c;
+    font-size: 10pt;
+  }
+
+  .experience-page header,
+  .experience-page footer,
+  .experience-actions,
+  .experience-page .page-intro > .section-intro {
+    display: none;
+  }
+
+  .experience-page main {
+    margin: 0;
+    padding: 0;
+    max-width: none;
+  }
+
+  .experience-page .page-intro {
+    padding: 0;
+  }
+
+  .experience-page .page-intro h1 {
+    font-size: 18pt;
+  }
+
+  .cv-identity {
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 12pt;
+  }
+
+  .experience-page .section-title::after,
+  .timeline-entry::before {
+    display: none;
+  }
+
+  .experience-section {
+    margin-top: 1.5rem;
+  }
+
+  .experience-section > h2 {
+    font-size: 15pt;
+    margin-bottom: 0.75rem;
+    break-after: avoid;
+  }
+
+  .career-timeline {
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .timeline-entry {
+    display: block;
+    padding-bottom: 1.25rem;
+    break-inside: avoid;
+  }
+
+  .experience-page .text-panel {
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+  }
+
+  .timeline-date,
+  .role-organisation,
+  .skills-grid dt,
+  .role-link {
+    color: #334b5a;
+  }
+
+  .role-highlights {
+    margin-top: 0.5rem;
+  }
+
+  .role-highlights li + li {
+    margin-top: 0.3rem;
+  }
+
+  .education-grid,
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .education-card,
+  .skills-grid > div {
+    break-inside: avoid;
+  }
+}

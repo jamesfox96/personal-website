@@ -4,7 +4,7 @@
 export function renderHeader(pagePath) {
   const navigation = [
     { label: "Home", href: "/", current: pagePath === "/" },
-    { label: "Experience", href: "/experience", current: pagePath === "/experience" || pagePath.startsWith("/experience/") },
+    { label: "Experience", href: "/experience/", current: pagePath === "/experience" || pagePath.startsWith("/experience/") },
     { label: "Projects", href: "/projects/", current: pagePath.startsWith("/projects") },
     { label: "Contact", href: "/contact", current: pagePath === "/contact" || pagePath.startsWith("/contact/") },
   ];

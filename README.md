@@ -28,6 +28,9 @@ node scripts/build-site.mjs --check
 - `llms.txt` provides a concise guide to public content. Update it when the
   biography or available pages change.
 - `assets/images/social-preview.jpg` is the 1200 × 630 sharing image.
+- `assets/documents/james-fox-cv.pdf` is the public CV download. Replace it with
+  the latest contact-stripped PDF when updating the CV; the download link stays
+  the same.
 
 After deployment, verify `https://james-fox.com/` in Google Search Console and Bing
 Webmaster Tools, then submit `https://james-fox.com/sitemap.xml`. Confirm that the
