@@ -18,6 +18,11 @@
   padding-block: 1rem;
 }
 
+.message p,
+.message img {
+  margin-inline: auto;
+}
+
 .message a {
   text-decoration: underline;
 }

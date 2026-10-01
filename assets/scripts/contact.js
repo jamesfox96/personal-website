@@ -26,19 +26,29 @@
       turnstileScript = script;
       const timer = setTimeout(() => {
         script.remove();
-        reject(new Error("Verification could not load. Check your connection or browser settings, then try again."));
+        reject(
+          new Error(
+            "Verification could not load. Check your connection or browser settings, then try again.",
+          ),
+        );
       }, 15000);
-      script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+      script.src =
+        "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
       script.async = true;
       script.onload = () => {
         clearTimeout(timer);
         if (window.turnstile) resolve();
-        else reject(new Error("Verification could not load. Please try again."));
+        else
+          reject(new Error("Verification could not load. Please try again."));
       };
       script.onerror = () => {
         clearTimeout(timer);
         script.remove();
-        reject(new Error("Verification could not load. Check your connection or browser settings, then try again."));
+        reject(
+          new Error(
+            "Verification could not load. Check your connection or browser settings, then try again.",
+          ),
+        );
       };
       document.head.append(script);
     });
@@ -58,9 +68,12 @@
         signal: AbortSignal.timeout(15000),
       });
       const data = await response.json();
-      if (!response.ok) throw new Error(data.error || "Verification failed. Please try again.");
+      if (!response.ok)
+        throw new Error(data.error || "Verification failed. Please try again.");
       if (typeof data.email !== "string" || !data.email) {
-        throw new Error("Contact details are temporarily unavailable. Please try again.");
+        throw new Error(
+          "Contact details are temporarily unavailable. Please try again.",
+        );
       }
 
       const email = document.getElementById("contact-email");
@@ -74,16 +87,19 @@
       }
       revealed = true;
       details.hidden = false;
-      status.textContent = "Cloudflare reckons you're human. Good enough for me. My details are below.";
+      status.textContent =
+        "Cloudflare reckons you're human. Good enough for me.";
       widget.hidden = true;
       window.turnstile.remove(widgetId);
       document.getElementById("contact-details-title").focus();
     } catch (error) {
-      showError(error.name === "TimeoutError"
-        ? "Verification took too long. Please try again."
-        : error instanceof TypeError || error instanceof SyntaxError
-          ? "Contact details couldn't be loaded. Please try again, or use LinkedIn below."
-          : error.message);
+      showError(
+        error.name === "TimeoutError"
+          ? "Verification took too long. Please try again."
+          : error instanceof TypeError || error instanceof SyntaxError
+            ? "Contact details couldn't be loaded. Please try again, or use LinkedIn below."
+            : error.message,
+      );
     } finally {
       verifying = false;
     }
@@ -100,15 +116,22 @@
         signal: AbortSignal.timeout(15000),
       });
       if (!response.headers.get("Content-Type")?.includes("application/json")) {
-        throw new Error("Direct contact is unavailable here. You can still find me on LinkedIn below.");
+        throw new Error(
+          "Direct contact is unavailable here. You can still find me on LinkedIn below.",
+        );
       }
       const data = await response.json();
-      if (!response.ok) throw new Error(data.error || "Contact details are temporarily unavailable.");
-      if (!data.siteKey) throw new Error("Verification is temporarily unavailable.");
+      if (!response.ok)
+        throw new Error(
+          data.error || "Contact details are temporarily unavailable.",
+        );
+      if (!data.siteKey)
+        throw new Error("Verification is temporarily unavailable.");
       await loadTurnstile();
       if (widgetId !== undefined) window.turnstile.remove(widgetId);
       widget.hidden = false;
-      status.textContent = "Complete the check below if prompted. My details will appear once verified.";
+      status.textContent =
+        "Complete the check below if prompted. My details will appear once verified.";
       widgetSize = widget.clientWidth < 300 ? "compact" : "flexible";
       widgetId = window.turnstile.render(widget, {
         sitekey: data.siteKey,
@@ -119,17 +142,28 @@
         retry: "never",
         callback: revealContact,
         "error-callback": () => {
-          showError("The robot bouncer couldn't finish the check. Try again, or sneak round to LinkedIn below.");
+          showError(
+            "The robot bouncer couldn't finish the check. Try again, or sneak round to LinkedIn below.",
+          );
           return true;
         },
-        "expired-callback": () => showError("Your human credentials have expired. Nothing personal. Please try again."),
-        "timeout-callback": () => showError("The check ran out of patience. Please try again."),
-        "unsupported-callback": () => showError("This browser can't run the check. Please try another browser or use LinkedIn below."),
+        "expired-callback": () =>
+          showError(
+            "Your human credentials have expired. Nothing personal. Please try again.",
+          ),
+        "timeout-callback": () =>
+          showError("The check ran out of patience. Please try again."),
+        "unsupported-callback": () =>
+          showError(
+            "This browser can't run the check. Please try another browser or use LinkedIn below.",
+          ),
       });
     } catch (error) {
-      showError(error.name === "TimeoutError" || error instanceof TypeError
-        ? "Verification couldn't load. Please check your connection and try again."
-        : error.message);
+      showError(
+        error.name === "TimeoutError" || error instanceof TypeError
+          ? "Verification couldn't load. Please check your connection and try again."
+          : error.message,
+      );
     } finally {
       loading = false;
     }
@@ -138,8 +172,14 @@
   gate.hidden = false;
   retry.addEventListener("click", startVerification);
   new ResizeObserver(() => {
-    if (widgetId !== undefined && !widget.hidden && !loading && !verifying && !revealed &&
-        widgetSize !== (widget.clientWidth < 300 ? "compact" : "flexible")) {
+    if (
+      widgetId !== undefined &&
+      !widget.hidden &&
+      !loading &&
+      !verifying &&
+      !revealed &&
+      widgetSize !== (widget.clientWidth < 300 ? "compact" : "flexible")
+    ) {
       startVerification();
     }
   }).observe(widget);
